@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SLF-MANAGEMENT</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="material">Material</string>
+    <string name="eventos">Eventos</string>
+    <string name="personal">Personal</string>
 </resources>
