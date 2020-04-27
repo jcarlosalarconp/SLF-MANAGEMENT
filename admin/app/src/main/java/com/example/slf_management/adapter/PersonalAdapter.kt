@@ -1,67 +1,45 @@
 package com.example.slf_management.adapter
 
+
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.example.slf_management.R
 import com.example.slf_management.items.PersonalItem
-import kotlinx.android.synthetic.main.item_personal.view.*
 
+class PersonalAdapter(var context: Context, var arrayList: ArrayList<PersonalItem>) :
+        RecyclerView.Adapter<PersonalAdapter.ItemHolder>() {
 
-class PersonalAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()
-{
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
 
-    private var personal: List<PersonalItem> = ArrayList()
+        val itemHolder = LayoutInflater.from(parent.context).inflate(R.layout.item_personal, parent, false)
+        return ItemHolder(itemHolder)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return BlogViewHolder(
-                LayoutInflater.from(parent.context).inflate(R.layout.item_personal, parent, false)
-        )
-    }
-
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        when(holder) {
-
-            is BlogViewHolder -> {
-                holder.bind(personal.get(position))
-            }
-
-        }
     }
 
     override fun getItemCount(): Int {
-        return personal.size
+        return arrayList.size
     }
 
-    fun submitList(blogList: List<PersonalItem>){
-        personal = blogList
-    }
+    override fun onBindViewHolder(holder: ItemHolder, position: Int) {
+        val personalItem: PersonalItem = arrayList.get(position)
 
-    class BlogViewHolder
-    constructor(
-            itemView: View
-    ): RecyclerView.ViewHolder(itemView){
+        holder.imagen.setImageResource(personalItem.imagenPersonal!!)
+        holder.nombre.text = personalItem.nombrePersonal
 
-        val imagen = itemView.imagen
-        val nombre = itemView.nombre
+        holder.nombre.setOnClickListener {
+            Toast.makeText(context, personalItem.nombrePersonal, Toast.LENGTH_LONG).show()
+        }    }
 
+    class ItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
-        fun bind(personalItem: PersonalItem){
-
-            val requestOptions = RequestOptions()
-                    .placeholder(R.drawable.ic_launcher_background)
-                    .error(R.drawable.ic_launcher_background)
-
-            Glide.with(itemView.context)
-                    .applyDefaultRequestOptions(requestOptions)
-                    .load(personalItem.imagen)
-                    .into(imagen)
-            nombre.setText(personalItem.nombre)
-
-        }
+        var imagen = itemView.findViewById<ImageView>(R.id.imagenPersonal)
+        var nombre = itemView.findViewById<TextView>(R.id.nombrePersonal)
 
     }
 

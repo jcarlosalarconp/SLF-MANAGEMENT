@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="120dp"
-    android:layout_height="150dp"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
-    cardview:cardCornerRadius="4dp"
-    android:layout_margin="5dp">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    cardview:cardCornerRadius="8dp"
+    cardview:cardElevation="5dp"
+    cardview:cardPreventCornerOverlap="true"
+    cardview:cardUseCompatPadding="true">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:padding="10dp">
 
         <ImageView
-            android:id="@+id/imagen"
+            android:id="@+id/imagenPersonal"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginHorizontal="8dp"
             android:background="@drawable/personal_icon" />
 
         <TextView
-            android:id="@+id/nombre"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Juan Carlos"
+            android:id="@+id/nombrePersonal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="90dp"
             android:textSize="15sp" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
