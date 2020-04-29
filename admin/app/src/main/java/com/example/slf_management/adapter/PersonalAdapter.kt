@@ -34,7 +34,8 @@ class PersonalAdapter(var context: Context, var arrayList: ArrayList<PersonalIte
 
         holder.nombre.setOnClickListener {
             Toast.makeText(context, personalItem.nombrePersonal, Toast.LENGTH_LONG).show()
-        }    }
+        }
+    }
 
     class ItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
