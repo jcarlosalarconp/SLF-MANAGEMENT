@@ -44,4 +44,5 @@ class PersonalAdapter(var context: Context, var arrayList: ArrayList<PersonalIte
 
     }
 
+
 }

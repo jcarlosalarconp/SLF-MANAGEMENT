@@ -34,9 +34,9 @@ class PersonalFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_personal, container, false)
 
-        recyclerView = view!!.findViewById(R.id.myRecycler) as RecyclerView
+        recyclerView = view!!.findViewById(R.id.recyclerPersonal) as RecyclerView
 
-        gridLayoutManager = GridLayoutManager(context, 3)
+        gridLayoutManager = GridLayoutManager(context, 2)
         recyclerView?.layoutManager = gridLayoutManager
         recyclerView?.setHasFixedSize(true)
 
