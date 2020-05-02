@@ -9,9 +9,10 @@ import android.widget.ExpandableListView
 import android.widget.TextView
 import android.widget.Toast
 import com.example.slf_management.R
+import com.example.slf_management.items.ComentarioItem
 import org.w3c.dom.Text
 
-class ExpandibleListViewAdapter (var context: Context, var expandableListView: ExpandableListView, var header : MutableList<String>, var body : MutableList<MutableList<String>>): BaseExpandableListAdapter() {
+class ExpandibleListViewAdapter (var context: Context, var expandableListView: ExpandableListView, var header : MutableList<String>, var body : MutableList<MutableList<ComentarioItem>>): BaseExpandableListAdapter() {
     override fun getGroup(groupPosition: Int): String {
         return  header[groupPosition]
     }
@@ -46,7 +47,7 @@ class ExpandibleListViewAdapter (var context: Context, var expandableListView: E
         return body[groupPosition].size
     }
 
-    override fun getChild(groupPosition: Int, childPosition: Int): String {
+    override fun getChild(groupPosition: Int, childPosition: Int): ComentarioItem {
         return body[groupPosition][childPosition]
     }
 
@@ -60,11 +61,15 @@ class ExpandibleListViewAdapter (var context: Context, var expandableListView: E
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             convertView = inflater.inflate(R.layout.layout_child, null)
         }
-        val title = convertView?.findViewById<TextView>(R.id.groupMaterial)
-        title?.text = getChild(groupPosition, childPosition)
-        title?.setOnClickListener{
-            Toast.makeText(context, getChild(groupPosition, childPosition), Toast.LENGTH_SHORT).show()
-        }
+        val nombre = convertView?.findViewById<TextView>(R.id.nombreComentario)
+        nombre?.text = getChild(groupPosition, childPosition).toString()
+        val comentario = convertView?.findViewById<TextView>(R.id.comentario)
+        comentario?.text = getChild(groupPosition, childPosition).toString()
+        val fecha = convertView?.findViewById<TextView>(R.id.fecha)
+        fecha?.text = getChild(groupPosition, childPosition).toString()
+        //title?.setOnClickListener{
+            //Toast.makeText(context, getChild(groupPosition, childPosition), Toast.LENGTH_SHORT).show()
+       // }
         return convertView
     }
 
