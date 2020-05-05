@@ -10,7 +10,6 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.slf_management.R
 import com.example.slf_management.items.ComentarioItem
-import org.w3c.dom.Text
 
 class ExpandibleListViewAdapter (var context: Context, var expandableListView: ExpandableListView, var header : MutableList<String>, var body : MutableList<MutableList<ComentarioItem>>): BaseExpandableListAdapter() {
     override fun getGroup(groupPosition: Int): String {
@@ -62,11 +61,11 @@ class ExpandibleListViewAdapter (var context: Context, var expandableListView: E
             convertView = inflater.inflate(R.layout.layout_child, null)
         }
         val nombre = convertView?.findViewById<TextView>(R.id.nombreComentario)
-        nombre?.text = getChild(groupPosition, childPosition).toString()
+        nombre?.text = getChild(groupPosition, childPosition).nombreComentario
         val comentario = convertView?.findViewById<TextView>(R.id.comentario)
-        comentario?.text = getChild(groupPosition, childPosition).toString()
+        comentario?.text = getChild(groupPosition, childPosition).comentario
         val fecha = convertView?.findViewById<TextView>(R.id.fecha)
-        fecha?.text = getChild(groupPosition, childPosition).toString()
+        fecha?.text = getChild(groupPosition, childPosition).fecha.toString()
         //title?.setOnClickListener{
             //Toast.makeText(context, getChild(groupPosition, childPosition), Toast.LENGTH_SHORT).show()
        // }

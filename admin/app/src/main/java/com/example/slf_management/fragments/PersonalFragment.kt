@@ -1,6 +1,7 @@
 package com.example.slf_management.fragments
 
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import com.example.slf_management.R
+import com.example.slf_management.activitys.PersonalActivity
 import com.example.slf_management.adapter.EventosAdapter
 import com.example.slf_management.adapter.PersonalAdapter
 import com.example.slf_management.items.EventoItem
@@ -53,6 +55,19 @@ class PersonalFragment : Fragment() {
         listaPersonal.add(personal4)
 
         val adapter = PersonalAdapter(inflater.context, listaPersonal)
+
+        adapter.setPersonalListener(object : PersonalAdapter.PersonalListener {
+            override fun onClick(position: Int) {
+                val intent = Intent(context, PersonalActivity::class.java)
+                val bundle = Bundle()
+                bundle.putString("nombrePersonal", listaPersonal[position].nombrePersonal)
+                bundle.putInt("imagenPersonal", listaPersonal[position].imagenPersonal)
+                intent.putExtras(bundle)
+                startActivity(intent)
+            }
+
+        })
+
         recyclerView.adapter = adapter
 
         return view

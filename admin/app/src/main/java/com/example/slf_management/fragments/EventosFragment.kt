@@ -1,6 +1,7 @@
 package com.example.slf_management.fragments
 
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,6 +12,7 @@ import android.widget.ListView
 import androidx.annotation.RequiresApi
 
 import com.example.slf_management.R
+import com.example.slf_management.activitys.EventoActivity
 import com.example.slf_management.adapter.EventosAdapter
 import com.example.slf_management.items.EventoItem
 import java.time.LocalDate
@@ -34,6 +36,18 @@ class EventosFragment : Fragment() {
         val listaEventos = listOf(evento, evento2)
 
         val adapter = EventosAdapter(inflater.context, listaEventos)
+
+        adapter.setEventosListener(object : EventosAdapter.EventosListener {
+            override fun onClick(position: Int) {
+                val intent = Intent(context, EventoActivity::class.java)
+                val bundle = Bundle()
+                //bundle.putString("nombreEvento", listaEventos[position].)
+                //bundle.putString("imagenEvento", listaEventos[position].imagenEvento)
+                intent.putExtras(bundle)
+                startActivity(intent)
+            }
+
+        })
 
         listView.adapter = adapter
 

@@ -36,21 +36,20 @@ class MaterialActivity : AppCompatActivity() {
         title = "Material"
 
         val listaComentarios : MutableList<ComentarioItem> = ArrayList()
-        val comentario = ComentarioItem("Juan Carlos", "Cable roto",  LocalDate.now())
-        val comentario2 = ComentarioItem("Javier", "Rotura lateral",  LocalDate.now())
-        val comentario3 = ComentarioItem("Lorena", "Falta corriente",  LocalDate.now())
+        val comentario = ComentarioItem("Juan Carlos", "Cable roto", LocalDate.now())
+        val comentario2 = ComentarioItem("Javier", "Rotura lateral", LocalDate.now())
+        val comentario3 = ComentarioItem("Lorena", "Falta corriente", LocalDate.now())
 
         listaComentarios.add(comentario)
         listaComentarios.add(comentario2)
         listaComentarios.add(comentario3)
 
-
         val listaEventos : MutableList<String> = ArrayList()
-        listaEventos.add("cumple ale")
-        listaEventos.add("comunion juanka")
+        listaEventos.add("Cumpleaños Alejando")
+        listaEventos.add("Comunión Nadia")
 
         header.add("Comentarios")
-        header.add("Eventos")
+        //header.add("Eventos")
 
         body.add(listaComentarios)
         //body.add(listaEventos)
