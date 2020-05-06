@@ -1,35 +1,64 @@
 package com.example.slf_management.adapter
 
+
 import android.content.Context
+import android.database.DataSetObserver
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
+import android.widget.ImageView
+import android.widget.ListAdapter
+import android.widget.TextView
+import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
 import com.example.slf_management.R
 import com.example.slf_management.items.EventoItem
-import kotlinx.android.synthetic.main.item_evento.view.*
 
-class EventosAdapter(private val mContext: Context, private val listaEventos: List<EventoItem>) : ArrayAdapter<EventoItem>(mContext, 0, listaEventos) {
+class EventosAdapter(var context: Context, var arrayList: ArrayList<EventoItem>) :
+        RecyclerView.Adapter<EventosAdapter.ItemHolder>() {
 
     private lateinit var mListener: EventosListener
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val layout = LayoutInflater.from(mContext).inflate(R.layout.item_evento, parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
 
-        val evento = listaEventos[position]
+        val itemHolder = LayoutInflater.from(parent.context).inflate(R.layout.item_evento, parent, false)
+        return ItemHolder(itemHolder)
 
-        layout.idEvento.text = evento.idEvento.toString()
-        layout.servicioSolicitado.text = evento.servicioSolicitado
-        layout.localidad.text = evento.fecha.toString()
+    }
 
-        return layout
+    override fun getItemCount(): Int {
+        return arrayList.size
     }
 
     fun setEventosListener(listener: EventosListener){
         mListener = listener
     }
 
+    override fun onBindViewHolder(holder: ItemHolder, position: Int) {
+        val eventoItem: EventoItem = arrayList.get(position)
+
+        holder.idEvento.text = eventoItem.idEvento.toString()
+        holder.servicioSolicitado.text = eventoItem.servicioSolicitado
+        holder.localidad.text = eventoItem.localidad
+        holder.fecha.text = eventoItem.fecha.toString()
+
+        holder.itemView.setOnClickListener() {
+            mListener.onClick(position)
+        }
+    }
+
+    class ItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+
+        var idEvento = itemView.findViewById<TextView>(R.id.idEvento)
+        var servicioSolicitado = itemView.findViewById<TextView>(R.id.servicioSolicitado)
+        var localidad = itemView.findViewById<TextView>(R.id.localidad)
+        var fecha = itemView.findViewById<TextView>(R.id.fecha)
+
+
+    }
+
     interface EventosListener{
         fun onClick(position: Int)
     }
+
 }
