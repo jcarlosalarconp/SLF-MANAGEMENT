@@ -11,7 +11,7 @@ import android.widget.Toast
 import com.example.slf_management.R
 import com.example.slf_management.items.ComentarioItem
 
-class ExpandibleListViewAdapter (var context: Context, var expandableListView: ExpandableListView, var header : MutableList<String>, var body : MutableList<MutableList<ComentarioItem>>): BaseExpandableListAdapter() {
+class ListaMaterialAdapter (var context: Context, var expandableListView: ExpandableListView, var header : MutableList<String>, var body : MutableList<MutableList<ComentarioItem>>): BaseExpandableListAdapter() {
     override fun getGroup(groupPosition: Int): String {
         return  header[groupPosition]
     }
@@ -27,7 +27,7 @@ class ExpandibleListViewAdapter (var context: Context, var expandableListView: E
     override fun getGroupView(groupPosition: Int, isExpanded: Boolean, convertView: View?, parent: ViewGroup?): View? {
         var convertView = convertView
         if(convertView == null){
-            val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+                val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             convertView = inflater.inflate(R.layout.layout_group, null)
         }
         val title = convertView?.findViewById<TextView>(R.id.groupMaterial)

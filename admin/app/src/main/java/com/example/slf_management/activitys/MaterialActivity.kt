@@ -3,14 +3,13 @@ package com.example.slf_management.activitys
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ExpandableListAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import com.example.slf_management.R
-import com.example.slf_management.adapter.ExpandibleListViewAdapter
+import com.example.slf_management.adapter.ListaMaterialAdapter
 import com.example.slf_management.items.ComentarioItem
-import com.example.slf_management.items.MaterialItem
+import com.example.slf_management.items.EventoItem
 import kotlinx.android.synthetic.main.activity_material.*
 import java.time.LocalDate
 import java.util.ArrayList
@@ -44,9 +43,16 @@ class MaterialActivity : AppCompatActivity() {
         listaComentarios.add(comentario2)
         listaComentarios.add(comentario3)
 
-        val listaEventos : MutableList<String> = ArrayList()
-        listaEventos.add("Cumpleaños Alejando")
-        listaEventos.add("Comunión Nadia")
+        val listaEventos : MutableList<EventoItem> = ArrayList()
+        val evento1 = EventoItem(1, "Show de Funky", "Málaga", LocalDate.now())
+        val evento2 = EventoItem(2, "Show de Wiwi", "Pizarra", LocalDate.now())
+        val evento3 = EventoItem(3, "Show de Rickypin", "San Pedro", LocalDate.now())
+        val evento4 = EventoItem(4, "Show de Candy", "Alhaurin el Grande", LocalDate.now())
+
+        listaEventos.add(evento1)
+        listaEventos.add(evento2)
+        listaEventos.add(evento3)
+        listaEventos.add(evento4)
 
         header.add("Comentarios")
         //header.add("Eventos")
@@ -54,7 +60,7 @@ class MaterialActivity : AppCompatActivity() {
         body.add(listaComentarios)
         //body.add(listaEventos)
 
-        expandibleListViewMaterial.setAdapter(ExpandibleListViewAdapter(this, expandibleListViewMaterial, header, body))
+        expandibleListViewMaterial.setAdapter(ListaMaterialAdapter(this, expandibleListViewMaterial, header, body))
     }
 
 }

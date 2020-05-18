@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginBottom="12dp"
     cardview:cardCornerRadius="8dp"
@@ -10,7 +10,7 @@
     cardview:cardUseCompatPadding="true">
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp">
 
@@ -18,25 +18,29 @@
             android:id="@+id/imagenMaterial"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginHorizontal="8dp"
+            android:layout_marginHorizontal="10dp"
             android:background="@drawable/material_icon" />
 
         <TextView
             android:id="@+id/nombreMaterial"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Nombre"
-            android:layout_marginLeft="32dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="90dp"
+            android:gravity="center|center_vertical"
+            android:text="Nombre"
+            android:textAlignment="inherit"
             android:textSize="15sp" />
 
         <TextView
             android:id="@+id/disponibilidadMaterial"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Disponibilidad"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="110dp"
+            android:gravity="center|center_vertical"
+            android:text="Disponibilidad"
+            android:textAlignment="inherit"
             android:textSize="15sp" />
 
     </RelativeLayout>
