@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/tituloInfo"
+        android:id="@+id/tituloInfoPersonal"
         android:layout_width="122dp"
         android:layout_height="69dp"
         android:gravity="center"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/informacion"
+        android:id="@+id/informacionInfoPersonal"
         android:layout_width="289dp"
         android:layout_height="70dp"
         android:gravity="center|start"

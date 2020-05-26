@@ -50,9 +50,9 @@ class EventosAdapter(var context: Context, var arrayList: ArrayList<EventoItem>)
     class ItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
         var idEvento = itemView.findViewById<TextView>(R.id.idEvento)
-        var servicioSolicitado = itemView.findViewById<TextView>(R.id.servicioSolicitado)
-        var localidad = itemView.findViewById<TextView>(R.id.localidad)
-        var fecha = itemView.findViewById<TextView>(R.id.fecha)
+        var servicioSolicitado = itemView.findViewById<TextView>(R.id.servicioSolicitadoEvento)
+        var localidad = itemView.findViewById<TextView>(R.id.localidadEvento)
+        var fecha = itemView.findViewById<TextView>(R.id.fechaEvento)
 
 
     }

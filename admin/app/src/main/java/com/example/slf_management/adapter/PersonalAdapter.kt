@@ -33,7 +33,7 @@ class PersonalAdapter(var context: Context, var arrayList: ArrayList<PersonalIte
     }
 
     override fun onBindViewHolder(holder: ItemHolder, position: Int) {
-        val personalItem: PersonalItem = arrayList.get(position)
+        val personalItem: PersonalItem = arrayList[position]
 
         holder.imagen.setImageResource(personalItem.imagenPersonal!!)
         holder.nombre.text = personalItem.nombrePersonal
@@ -45,7 +45,7 @@ class PersonalAdapter(var context: Context, var arrayList: ArrayList<PersonalIte
 
     class ItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
-        var imagen = itemView.findViewById<ImageView>(R.id.imagenPersonalActivity)
+        var imagen = itemView.findViewById<ImageView>(R.id.imagenPersonal)
         var nombre = itemView.findViewById<TextView>(R.id.nombrePersonal)
 
     }

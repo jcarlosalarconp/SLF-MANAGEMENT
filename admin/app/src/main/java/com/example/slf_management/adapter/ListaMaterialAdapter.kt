@@ -62,9 +62,9 @@ class ListaMaterialAdapter (var context: Context, var expandableListView: Expand
         }
         val nombre = convertView?.findViewById<TextView>(R.id.nombreComentario)
         nombre?.text = getChild(groupPosition, childPosition).nombreComentario
-        val comentario = convertView?.findViewById<TextView>(R.id.comentario)
+        val comentario = convertView?.findViewById<TextView>(R.id.comentarioComentario)
         comentario?.text = getChild(groupPosition, childPosition).comentario
-        val fecha = convertView?.findViewById<TextView>(R.id.fecha)
+        val fecha = convertView?.findViewById<TextView>(R.id.fechaComentario)
         fecha?.text = getChild(groupPosition, childPosition).fecha.toString()
         //title?.setOnClickListener{
             //Toast.makeText(context, getChild(groupPosition, childPosition), Toast.LENGTH_SHORT).show()

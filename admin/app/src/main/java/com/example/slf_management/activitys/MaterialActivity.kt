@@ -55,7 +55,7 @@ class MaterialActivity : AppCompatActivity() {
         listaEventos.add(evento4)
 
         header.add("Comentarios")
-        //header.add("Eventos")
+        header.add("Eventos")
 
         body.add(listaComentarios)
         //body.add(listaEventos)
