@@ -9,9 +9,9 @@ import android.widget.ExpandableListView
 import android.widget.TextView
 import android.widget.Toast
 import com.example.slf_management.R
-import com.example.slf_management.items.ComentarioItem
+import com.example.slf_management.items.EventoItem
 
-class ListaMaterialAdapter (var context: Context, var expandableListView: ExpandableListView, var header : MutableList<String>, var body : MutableList<MutableList<ComentarioItem>>): BaseExpandableListAdapter() {
+class ListaEventosAdapter (var context: Context, var expandableListView: ExpandableListView, var header : MutableList<String>, var body : MutableList<MutableList<EventoItem>>): BaseExpandableListAdapter() {
     override fun getGroup(groupPosition: Int): String {
         return  header[groupPosition]
     }
@@ -26,12 +26,14 @@ class ListaMaterialAdapter (var context: Context, var expandableListView: Expand
 
     override fun getGroupView(groupPosition: Int, isExpanded: Boolean, convertView: View?, parent: ViewGroup?): View? {
         var convertView = convertView
+
         if(convertView == null){
-                val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             convertView = inflater.inflate(R.layout.layout_group, null)
         }
         val title = convertView?.findViewById<TextView>(R.id.groupMaterial)
         title?.text = getGroup(groupPosition)
+
         title?.setOnClickListener{
             if(expandableListView.isGroupExpanded(groupPosition))
                 expandableListView.collapseGroup(groupPosition)
@@ -39,6 +41,7 @@ class ListaMaterialAdapter (var context: Context, var expandableListView: Expand
                 expandableListView.expandGroup(groupPosition)
             Toast.makeText(context, getGroup(groupPosition), Toast.LENGTH_SHORT).show()
         }
+
         return convertView
     }
 
@@ -46,7 +49,7 @@ class ListaMaterialAdapter (var context: Context, var expandableListView: Expand
         return body[groupPosition].size
     }
 
-    override fun getChild(groupPosition: Int, childPosition: Int): ComentarioItem {
+    override fun getChild(groupPosition: Int, childPosition: Int): EventoItem {
         return body[groupPosition][childPosition]
     }
 
@@ -58,17 +61,19 @@ class ListaMaterialAdapter (var context: Context, var expandableListView: Expand
         var convertView = convertView
         if(convertView == null){
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            convertView = inflater.inflate(R.layout.layout_child, null)
+            convertView = inflater.inflate(R.layout.item_evento, null)
         }
-        val nombre = convertView?.findViewById<TextView>(R.id.nombreComentario)
-        nombre?.text = getChild(groupPosition, childPosition).nombreComentario
-        val comentario = convertView?.findViewById<TextView>(R.id.comentarioComentario)
-        comentario?.text = getChild(groupPosition, childPosition).comentario
-        val fecha = convertView?.findViewById<TextView>(R.id.fechaComentario)
+        val id = convertView?.findViewById<TextView>(R.id.idEvento)
+        id?.text = getChild(groupPosition, childPosition).idEvento.toString()
+        val localidad = convertView?.findViewById<TextView>(R.id.localidadEvento)
+        localidad?.text = getChild(groupPosition, childPosition).localidad
+        val fecha = convertView?.findViewById<TextView>(R.id.fechaEvento)
         fecha?.text = getChild(groupPosition, childPosition).fecha.toString()
+        val servicioSolicitado = convertView?.findViewById<TextView>(R.id.servicioSolicitadoEvento)
+        servicioSolicitado?.text = getChild(groupPosition, childPosition).servicioSolicitado
         //title?.setOnClickListener{
-            //Toast.makeText(context, getChild(groupPosition, childPosition), Toast.LENGTH_SHORT).show()
-       // }
+        //Toast.makeText(context, getChild(groupPosition, childPosition), Toast.LENGTH_SHORT).show()
+        // }
         return convertView
     }
 
