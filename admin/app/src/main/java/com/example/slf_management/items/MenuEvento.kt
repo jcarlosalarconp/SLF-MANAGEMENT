@@ -14,7 +14,6 @@ data class SectionEvento (
 
 data class Evento (
         var id : Int,
-        var nombre : String,
         var localidad : String,
         var servicioSolicitado : String,
         var fecha : LocalDate

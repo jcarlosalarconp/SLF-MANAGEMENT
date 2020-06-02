@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.viewpager.widget.ViewPager
 import com.example.slf_management.adapter.FragmentAdapter
 import com.example.slf_management.fragments.EventosFragment
@@ -41,12 +42,14 @@ class MainActivity : AppCompatActivity() {
 
             override fun onPageSelected(position: Int) {
                 navigation.setCurrentActiveItem(position)
+                Toast.makeText(this@MainActivity,position.toString(),Toast.LENGTH_SHORT).show()
             }
         })
+        viewPagerFragment.setCurrentItem(1)
 
         navigation.setNavigationChangeListener(object : BubbleNavigationChangeListener{
             override fun onNavigationChanged(view: View?, position: Int) {
-                viewPagerFragment.setCurrentItem(position, true)
+                viewPagerFragment.setCurrentItem(viewPagerFragment.currentItem, true)
             }
         })
     }
