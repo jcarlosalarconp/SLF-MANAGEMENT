@@ -14,7 +14,6 @@ import com.example.slf_management.adapter.SectionRecyclerViewComentariosAdapter
 import com.example.slf_management.adapter.SectionRecyclerViewEventosAdapter
 import com.example.slf_management.items.Comentario
 import com.example.slf_management.items.Evento
-import com.example.slf_management.items.EventoItem
 import kotlinx.android.synthetic.main.activity_material.*
 import java.time.LocalDate
 import java.util.*

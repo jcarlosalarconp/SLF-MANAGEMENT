@@ -10,7 +10,8 @@ class EventoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_evento)
-        /*  intent.extras?.let {
+        /*
+          intent.extras?.let {
             val nombrePersonal = it.getString("nombrePersonal")
              val imagenPersonal = it.getInt("imagenPersonal")
              nombrePersonalActivity.text = nombrePersonal

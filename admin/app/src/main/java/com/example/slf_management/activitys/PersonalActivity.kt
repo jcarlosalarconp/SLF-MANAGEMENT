@@ -3,10 +3,11 @@ package com.example.slf_management.activitys
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.ListView
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.slf_management.R
+import com.example.slf_management.adapter.InfoPersonalAdapter
 import com.example.slf_management.items.PersonalInfoItem
 import java.util.ArrayList
 
@@ -14,6 +15,7 @@ class PersonalActivity : AppCompatActivity() {
 
     private val nombrePersonalActivity by lazy { findViewById<TextView>(R.id.nombrePersonalActivity) }
     private val imagenPersonalActivity by lazy { findViewById<ImageView>(R.id.imagenPersonalActivity) }
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,8 +27,14 @@ class PersonalActivity : AppCompatActivity() {
             imagenPersonalActivity.setImageResource(imagenPersonal)
         }
 
-        val personalInfo = PersonalInfoItem("Nombre", "Juan Carlos")
+        recyclerView = findViewById(R.id.recyclerPersonalInfo)
         val listaInfo : ArrayList<PersonalInfoItem> = ArrayList()
+        val personalInfo = PersonalInfoItem("Nombre", "Juan Carlos")
         listaInfo.add(personalInfo)
+        val adapter = InfoPersonalAdapter(this, listaInfo)
+        val recyclerInfo = findViewById<RecyclerView>(R.id.recyclerPersonalInfo)
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recyclerInfo.layoutManager
+        recyclerInfo.adapter = adapter
     }
 }
