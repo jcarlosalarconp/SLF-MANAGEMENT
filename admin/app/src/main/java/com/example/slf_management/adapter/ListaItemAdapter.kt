@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.slf_management.R
 import com.example.slf_management.items.ListaItem
 
-class ListaItemAdapter(var context: Context, var arrayList: ArrayList<ListaItem>) :
+class ListaItemAdapter(var arrayList: ArrayList<ListaItem>) :
         RecyclerView.Adapter<ListaItemAdapter.ItemHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {

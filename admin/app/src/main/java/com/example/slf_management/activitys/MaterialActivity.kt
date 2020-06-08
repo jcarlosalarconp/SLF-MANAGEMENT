@@ -22,8 +22,8 @@ class MaterialActivity : AppCompatActivity() {
 
     private val nombreMaterialActivity by lazy { findViewById<TextView>(R.id.nombreMaterialActivity) }
     private val imagenMaterialActivity by lazy { findViewById<ImageView>(R.id.imagenMaterialActivity) }
-    private var mostrarComentarios = false
-    private var mostrarEventos = false
+    private var mostrarComentarios = true
+    private var mostrarEventos = true
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,20 +64,22 @@ class MaterialActivity : AppCompatActivity() {
         listaEventos.add(evento3)
         listaEventos.add(evento4)
 
-
+        val adapterComentarios = SectionRecyclerViewEventosAdapter(listaEventos)
+        val recyclerMenuComentarios = listaComentario.findViewById<RecyclerView>(R.id.recyclerMenu)
+        val layoutManagerComentarios = LinearLayoutManager(this@MaterialActivity, LinearLayoutManager.VERTICAL, false)
+        recyclerMenuComentarios.layoutManager = layoutManagerComentarios
+        recyclerMenuComentarios.adapter = adapterComentarios
+        recyclerMenuComentarios.visibility = View.VISIBLE
         listaComentario.setOnClickListener(object : View.OnClickListener{
+
             override fun onClick(v: View?) {
-                val adapter = SectionRecyclerViewComentariosAdapter(listaComentarios)
-                val recyclerMenu = listaComentario.findViewById<RecyclerView>(R.id.recyclerMenu)
-                val layoutManager = LinearLayoutManager(this@MaterialActivity, LinearLayoutManager.VERTICAL, false)
-                recyclerMenu.layoutManager = layoutManager
-                recyclerMenu.adapter = adapter
+
                 if (!mostrarComentarios) {
-                    recyclerMenu.visibility = View.VISIBLE
+                    recyclerMenuComentarios.visibility = View.VISIBLE
                     mostrarComentarios = true
                 }
                 else {
-                    recyclerMenu.visibility = View.GONE
+                    recyclerMenuComentarios.visibility = View.GONE
                     mostrarComentarios = false
                 }
             }
@@ -85,13 +87,17 @@ class MaterialActivity : AppCompatActivity() {
         val textoComentario = listaComentario.findViewById<TextView>(R.id.tituloMenu)
         textoComentario.text = "Comentarios"
 
+
+        val adapter = SectionRecyclerViewComentariosAdapter(listaComentarios)
+        val recyclerMenu = listaEvento.findViewById<RecyclerView>(R.id.recyclerMenu)
+        val layoutManager = LinearLayoutManager(this@MaterialActivity, LinearLayoutManager.VERTICAL, false)
+        recyclerMenu.layoutManager = layoutManager
+        recyclerMenu.adapter = adapter
+        recyclerMenu.visibility = View.VISIBLE
+
         listaEvento.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
-                val adapter = SectionRecyclerViewEventosAdapter(listaEventos)
-                val recyclerMenu = listaEvento.findViewById<RecyclerView>(R.id.recyclerMenu)
-                val layoutManager = LinearLayoutManager(this@MaterialActivity, LinearLayoutManager.VERTICAL, false)
-                recyclerMenu.layoutManager = layoutManager
-                recyclerMenu.adapter = adapter
+
                 if (!mostrarEventos) {
                     recyclerMenu.visibility = View.VISIBLE
                     mostrarEventos = true
@@ -104,6 +110,7 @@ class MaterialActivity : AppCompatActivity() {
         })
         val textoEvento = listaEvento.findViewById<TextView>(R.id.tituloMenu)
         textoEvento.text = "Eventos"
+
     }
 
 }

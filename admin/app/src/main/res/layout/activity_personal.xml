@@ -5,7 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activitys.PersonalActivity">
-
+<androidx.appcompat.widget.Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:title=" "
+    android:id="@+id/toolbarPersonal"
+    tools:ignore="MissingConstraints">
+</androidx.appcompat.widget.Toolbar>
     <ImageView
         android:id="@+id/imagenPersonalActivity"
         android:layout_width="176dp"
@@ -47,5 +53,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/disponibilidadPersonalActivity" />
+        app:layout_constraintTop_toBottomOf="@+id/disponibilidadPersonalActivity"
+        android:orientation="vertical" />
 </androidx.constraintlayout.widget.ConstraintLayout>

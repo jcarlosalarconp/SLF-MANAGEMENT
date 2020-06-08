@@ -13,7 +13,7 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation_view_linear"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -37,7 +37,8 @@
             app:bt_colorActive="@color/red_active"
             app:bt_colorInactive="@color/red_inactive"
             app:bt_icon="@drawable/material_icon"
-            app:bt_title="@string/material" />
+            app:bt_title="@string/material"
+            />
 
         <com.gauravk.bubblenavigation.BubbleToggleView
             android:id="@+id/l_item_search"
@@ -61,4 +62,14 @@
 
     </com.gauravk.bubblenavigation.BubbleNavigationLinearView>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAñadir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:contentDescription="Añadir"
+        android:src="@drawable/eventos_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/view_pager"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.slf_management.R
 import com.example.slf_management.items.Comentario
 
-class SectionRecyclerViewComentariosAdapter(private val comentarios: ArrayList<Comentario>): RecyclerView.Adapter<SectionRecyclerViewComentariosAdapter.SectionViewHolder>() {
+class SectionRecyclerViewComentariosAdapter(private val comentarios: java.util.ArrayList<Comentario>): RecyclerView.Adapter<SectionRecyclerViewComentariosAdapter.SectionViewHolder>() {
     private var rvListener: SectionRecyclerViewListener?= null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SectionViewHolder {
