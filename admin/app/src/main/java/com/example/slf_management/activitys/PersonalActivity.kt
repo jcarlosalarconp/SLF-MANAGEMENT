@@ -7,8 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.slf_management.R
-import com.example.slf_management.adapter.InfoPersonalAdapter
-import com.example.slf_management.items.PersonalInfoItem
+import com.example.slf_management.adapter.ListaItemAdapter
+import com.example.slf_management.items.ListaItem
 import java.util.ArrayList
 
 class PersonalActivity : AppCompatActivity() {
@@ -28,10 +28,10 @@ class PersonalActivity : AppCompatActivity() {
         }
 
         recyclerView = findViewById(R.id.recyclerPersonalInfo)
-        val listaInfo : ArrayList<PersonalInfoItem> = ArrayList()
-        val personalInfo = PersonalInfoItem("Nombre", "Juan Carlos")
+        val listaInfo : ArrayList<ListaItem> = ArrayList()
+        val personalInfo = ListaItem("Nombre", "Juan Carlos")
         listaInfo.add(personalInfo)
-        val adapter = InfoPersonalAdapter(this, listaInfo)
+        val adapter = ListaItemAdapter(this, listaInfo)
         val recyclerInfo = findViewById<RecyclerView>(R.id.recyclerPersonalInfo)
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerInfo.layoutManager

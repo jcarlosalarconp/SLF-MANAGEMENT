@@ -3,11 +3,13 @@
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/tools"
     android:layout_marginBottom="12dp"
     cardview:cardCornerRadius="8dp"
     cardview:cardElevation="5dp"
     cardview:cardPreventCornerOverlap="true"
-    cardview:cardUseCompatPadding="true">
+    cardview:cardUseCompatPadding="true"
+    app:ignore="NamespaceTypo">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -30,7 +32,7 @@
             android:gravity="center|center_vertical"
             android:text="Nombre"
             android:textAlignment="inherit"
-            android:textSize="15sp" />
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/disponibilidadMaterial"
@@ -41,7 +43,9 @@
             android:gravity="center|center_vertical"
             android:text="Disponibilidad"
             android:textAlignment="inherit"
-            android:textSize="15sp" />
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@+id/nombreMaterial" />
+        />
 
     </RelativeLayout>
 

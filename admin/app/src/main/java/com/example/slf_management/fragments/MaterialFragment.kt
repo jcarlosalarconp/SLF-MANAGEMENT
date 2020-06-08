@@ -40,14 +40,14 @@ class MaterialFragment : Fragment() {
 
         var listaMaterial:ArrayList<MaterialItem> = ArrayList()
 
-        val material = MaterialItem("Juan Carlos", true, R.drawable.material_icon)
-        val material2 = MaterialItem("Javier", false, R.drawable.material_icon)
-        val material3 = MaterialItem("Juan Carlos", false, R.drawable.material_icon)
-        val material4 = MaterialItem("Javier", true, R.drawable.material_icon)
-        val material5 = MaterialItem("Juan Carlos", true, R.drawable.material_icon)
-        val material6 = MaterialItem("Javier", false, R.drawable.material_icon)
-        val material7 = MaterialItem("Juan Carlos", false, R.drawable.material_icon)
-        val material8 = MaterialItem("Javier", true, R.drawable.material_icon)
+        val material = MaterialItem("Altavoz Behringer Pequeño", true, R.drawable.material_icon)
+        val material2 = MaterialItem("Micrófono", false, R.drawable.material_icon)
+        val material3 = MaterialItem("Altavoz Behringer Grande", false, R.drawable.material_icon)
+        val material4 = MaterialItem("Altavoz Behringer Pequeño", true, R.drawable.material_icon)
+        val material5 = MaterialItem("Micrófono de mano", true, R.drawable.material_icon)
+        val material6 = MaterialItem("Caja de Materiales", false, R.drawable.material_icon)
+        val material7 = MaterialItem("Pata de Altavoz", false, R.drawable.material_icon)
+        val material8 = MaterialItem("Pie de piano", true, R.drawable.material_icon)
 
         listaMaterial.add(material)
         listaMaterial.add(material2)

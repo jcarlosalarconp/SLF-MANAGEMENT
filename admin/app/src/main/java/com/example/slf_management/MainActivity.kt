@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
         navigation.setNavigationChangeListener(object : BubbleNavigationChangeListener{
             override fun onNavigationChanged(view: View?, position: Int) {
-                viewPagerFragment.setCurrentItem(viewPagerFragment.currentItem, true)
+                viewPagerFragment.setCurrentItem(position, true)
             }
         })
     }
