@@ -6,17 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".activitys.NuevoPersonalActivity">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="355dp"
-        android:layout_marginEnd="181dp"
-        android:layout_marginBottom="357dp"
-        android:text="nuevo personal"
+    <ImageView
+        android:id="@+id/imagenNuevoPersonal"
+        android:layout_width="176dp"
+        android:layout_height="172dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/personal_icon" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerNuevoPersonal"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_marginBottom="48dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/recyclerNuevoPersonal" />
 </androidx.constraintlayout.widget.ConstraintLayout>
