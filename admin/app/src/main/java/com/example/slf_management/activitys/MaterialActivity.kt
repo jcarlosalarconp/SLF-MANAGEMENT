@@ -38,6 +38,7 @@ class MaterialActivity : AppCompatActivity() {
 
         title = "Material"
 
+        //COMENTARIOS
         val listaComentarios : ArrayList<Comentario> = arrayListOf()
         val comentario = Comentario("Juan Carlos", "Cable roto", LocalDate.now())
         val comentario2 = Comentario("Javier", "Rotura lateral", LocalDate.now())
@@ -53,18 +54,8 @@ class MaterialActivity : AppCompatActivity() {
         listaComentarios.add(comentario5)
         listaComentarios.add(comentario6)
 
-        val listaEventos : ArrayList<Evento> = arrayListOf()
-        val evento1 = Evento(1, "Show de Funky", "Málaga", LocalDate.now())
-        val evento2 = Evento(2, "Show de Wiwi", "Pizarra", LocalDate.now())
-        val evento3 = Evento(3, "Show de Rickypin", "San Pedro", LocalDate.now())
-        val evento4 = Evento(4, "Show de Candy", "Alhaurin el Grande", LocalDate.now())
 
-        listaEventos.add(evento1)
-        listaEventos.add(evento2)
-        listaEventos.add(evento3)
-        listaEventos.add(evento4)
-
-        val adapterComentarios = SectionRecyclerViewEventosAdapter(listaEventos)
+        val adapterComentarios = SectionRecyclerViewComentariosAdapter(listaComentarios)
         val recyclerMenuComentarios = listaComentario.findViewById<RecyclerView>(R.id.recyclerMenu)
         val layoutManagerComentarios = LinearLayoutManager(this@MaterialActivity, LinearLayoutManager.VERTICAL, false)
         recyclerMenuComentarios.layoutManager = layoutManagerComentarios
@@ -87,8 +78,19 @@ class MaterialActivity : AppCompatActivity() {
         val textoComentario = listaComentario.findViewById<TextView>(R.id.tituloMenu)
         textoComentario.text = "Comentarios"
 
+        //EVENTOS
+        val listaEventos : ArrayList<Evento> = arrayListOf()
+        val evento1 = Evento(1, "Show de Funky", "Málaga", LocalDate.now())
+        val evento2 = Evento(2, "Show de Wiwi", "Pizarra", LocalDate.now())
+        val evento3 = Evento(3, "Show de Rickypin", "San Pedro", LocalDate.now())
+        val evento4 = Evento(4, "Show de Candy", "Alhaurin el Grande", LocalDate.now())
 
-        val adapter = SectionRecyclerViewComentariosAdapter(listaComentarios)
+        listaEventos.add(evento1)
+        listaEventos.add(evento2)
+        listaEventos.add(evento3)
+        listaEventos.add(evento4)
+
+        val adapter = SectionRecyclerViewEventosAdapter(listaEventos)
         val recyclerMenu = listaEvento.findViewById<RecyclerView>(R.id.recyclerMenu)
         val layoutManager = LinearLayoutManager(this@MaterialActivity, LinearLayoutManager.VERTICAL, false)
         recyclerMenu.layoutManager = layoutManager
