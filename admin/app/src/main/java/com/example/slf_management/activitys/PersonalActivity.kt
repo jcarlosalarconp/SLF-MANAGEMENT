@@ -47,9 +47,6 @@ class PersonalActivity : AppCompatActivity() {
         val evento4 = ListaItem("Dirección", "c/ Gondola 2")
         val evento5 = ListaItem("Tlf. contacto externo", "652147884")
         val evento6 = ListaItem("Nº Seguridad Social", "3549842")
-        val evento7 = ListaItem("Activo", "Sí")
-
-
 
         listaPersonalInfo.add(evento1)
         listaPersonalInfo.add(evento2)
@@ -57,7 +54,6 @@ class PersonalActivity : AppCompatActivity() {
         listaPersonalInfo.add(evento4)
         listaPersonalInfo.add(evento5)
         listaPersonalInfo.add(evento6)
-        listaPersonalInfo.add(evento7)
 
         val adapterPersonalInfo = ListaItemAdapter(listaPersonalInfo)
         val recyclerPersonalInfo = recyclerPersonalInfo.findViewById<RecyclerView>(R.id.recyclerPersonalInfo)

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    android:id="@+id/cardViewMaterialItem"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -9,7 +11,8 @@
     cardview:cardElevation="5dp"
     cardview:cardPreventCornerOverlap="true"
     cardview:cardUseCompatPadding="true"
-    app:ignore="NamespaceTypo">
+    app:ignore="NamespaceTypo"
+    cardview:cardBackgroundColor="@color/blue_grey_inactive">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -31,22 +34,13 @@
             android:layout_marginTop="90dp"
             android:gravity="center|center_vertical"
             android:text="Nombre"
+            android:fontFamily="@font/neufreit"
             android:textAlignment="inherit"
-            android:textSize="12sp" />
+            android:textSize="12sp" /><![CDATA[
 
-        <TextView
-            android:id="@+id/disponibilidadMaterial"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="110dp"
-            android:gravity="center|center_vertical"
-            android:text="Disponibilidad"
-            android:textAlignment="inherit"
-            android:textSize="12sp"
-            app:layout_constraintTop_toBottomOf="@+id/nombreMaterial" />
         />
 
+    ]]>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

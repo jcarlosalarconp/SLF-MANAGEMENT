@@ -10,7 +10,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/custom_border">
     <ImageView
-        android:id="@+id/imagenTrabajador"
+        android:id="@+id/imagenFicha"
         android:layout_marginHorizontal="10dp"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -18,24 +18,13 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/nombreTrabajador"
+        android:id="@+id/nombreFicha"
         android:layout_width="289dp"
         android:layout_height="70dp"
         android:gravity="center|start"
         android:paddingStart="15dp"
         android:text="TextView"
         android:fontFamily="@font/neufreit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/buttonCancelTrabajador"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="10dp"
-        android:src="@drawable/ic_cancel_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </LinearLayout>

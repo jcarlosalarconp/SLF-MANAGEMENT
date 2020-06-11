@@ -12,9 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <include
             android:id="@+id/listaRecyclerDatosGenerales"
             layout="@layout/item_header" />
+
         <include
             android:id="@+id/listaRecyclerInformacionDeLaFiesta"
             layout="@layout/item_header" />
@@ -23,10 +25,11 @@
             layout="@layout/item_header" />
         <include
             android:id="@+id/listaRecyclerTrabajadores"
-            layout="@layout/item_header" />
+            layout="@layout/item_header_trabajadores" />
         <include
         android:id="@+id/listaRecyclerFichas"
         layout="@layout/item_header" />
     </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

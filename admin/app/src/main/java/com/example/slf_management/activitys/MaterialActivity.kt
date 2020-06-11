@@ -1,5 +1,6 @@
 package com.example.slf_management.activitys
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -113,6 +114,12 @@ class MaterialActivity : AppCompatActivity() {
         val textoEvento = listaEvento.findViewById<TextView>(R.id.tituloMenu)
         textoEvento.text = "Eventos"
 
+        adapter.setSectionRecyclerViewListener(object :SectionRecyclerViewEventosAdapter.SectionRecyclerViewListener{
+            override fun onItemClick(itemPosition: Int) {
+                val intent = Intent(this@MaterialActivity, EventoActivity::class.java)
+                startActivity(intent)
+            }
+        })
     }
 
 }

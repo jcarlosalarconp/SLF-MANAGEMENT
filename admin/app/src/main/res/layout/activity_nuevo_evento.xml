@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activitys.NuevoEventoActivity">
-
+    tools:context=".activitys.NuevoEventoActivity"
+    android:background="@color/blue_grey_active">
     <ImageView
         android:id="@+id/imagenNuevoEvento"
         android:layout_width="176dp"
@@ -19,7 +19,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerNuevoEvento"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="400dp"
         android:layout_marginBottom="48dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"

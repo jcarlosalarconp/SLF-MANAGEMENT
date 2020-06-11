@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/blue_grey_active">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
@@ -22,13 +23,13 @@
         android:id="@+id/bottom_navigation_view_linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         android:elevation="8dp"
         android:orientation="horizontal"
         android:padding="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/blue_grey_inactive">
 
         <com.gauravk.bubblenavigation.BubbleToggleView
             android:id="@+id/l_item_home"
@@ -55,8 +56,8 @@
             android:id="@+id/l_item_profile_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:bt_colorActive="@color/blue_grey_active"
-            app:bt_colorInactive="@color/blue_grey_inactive"
+            app:bt_colorActive="@color/green_active"
+            app:bt_colorInactive="@color/green_active"
             app:bt_icon="@drawable/personal_icon"
             app:bt_title="@string/personal" />
 

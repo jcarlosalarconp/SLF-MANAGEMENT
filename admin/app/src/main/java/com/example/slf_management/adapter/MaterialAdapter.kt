@@ -1,13 +1,16 @@
 package com.example.slf_management.adapter
 
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.slf_management.R
 import com.example.slf_management.items.MaterialItem
@@ -32,12 +35,19 @@ class MaterialAdapter(var context: Context, var arrayList: ArrayList<MaterialIte
         mListener = listener
     }
 
+    @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: ItemHolder, position: Int) {
         val materialItem: MaterialItem = arrayList.get(position)
 
         holder.imagen.setImageResource(materialItem.imagenMaterial!!)
         holder.nombre.text = materialItem.nombreMaterial
-        holder.disponibilidad.text = materialItem.disponibilidadMaterial.toString()
+
+        if(materialItem.disponibilidadMaterial){
+            holder.fondo.setCardBackgroundColor(R.color.colorPrimary)
+        }else{
+            holder.fondo.setCardBackgroundColor(R.color.red_active)
+
+        }
 
         holder.itemView.setOnClickListener() {
             mListener.onClick(position)
@@ -48,8 +58,7 @@ class MaterialAdapter(var context: Context, var arrayList: ArrayList<MaterialIte
 
         var imagen = itemView.findViewById<ImageView>(R.id.imagenMaterial)
         var nombre = itemView.findViewById<TextView>(R.id.nombreMaterial)
-        var disponibilidad = itemView.findViewById<TextView>(R.id.disponibilidadMaterial)
-
+        var fondo = itemView.findViewById<CardView>(R.id.cardViewMaterialItem)
     }
 
     interface MaterialListener{

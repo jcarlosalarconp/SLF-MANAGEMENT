@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.slf_management.R
 import com.example.slf_management.items.TrabajadorItem
 
-class SectionRecyclerViewTrabajadorAdapter(private var listaTrabajadores: ArrayList<TrabajadorItem>): RecyclerView.Adapter<SectionRecyclerViewTrabajadorAdapter.SectionViewHolder>() {
+class TrabajadoresAdapter(private val listaTrabajador: ArrayList<TrabajadorItem>): RecyclerView.Adapter<TrabajadoresAdapter.SectionViewHolder>() {
     private var rvListener: SectionRecyclerViewListener?= null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SectionViewHolder {
@@ -17,11 +17,11 @@ class SectionRecyclerViewTrabajadorAdapter(private var listaTrabajadores: ArrayL
     }
 
     override fun onBindViewHolder(holder: SectionViewHolder, position: Int) {
-        holder.bind(listaTrabajadores, position, rvListener)
+        holder.bind(listaTrabajador, position, rvListener)
     }
 
     override fun getItemCount(): Int {
-        return listaTrabajadores.size
+        return listaTrabajador.size
     }
 
     fun setSectionRecyclerViewListener(listener: SectionRecyclerViewListener) {
@@ -31,28 +31,19 @@ class SectionRecyclerViewTrabajadorAdapter(private var listaTrabajadores: ArrayL
     class SectionViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val imagenTrabajador = itemView.findViewById<ImageView>(R.id.imagenTrabajador)
         private val nombreTrabajador = itemView.findViewById<TextView>(R.id.nombreTrabajador)
-        private val botonCancelar = itemView.findViewById<ImageView>(R.id.buttonCancelTrabajador)
 
         fun bind(list: ArrayList<TrabajadorItem>, position: Int, listener: SectionRecyclerViewListener?) {
             imagenTrabajador.setImageResource(list[position].imagenTrabajador)
             nombreTrabajador.text = list[position].nombreTrabajador
-            botonCancelar.setOnClickListener{
-                listener?.onDeleteClick(position)
-            }
+
             itemView.setOnClickListener {
                 listener?.onItemClick(position)
+
             }
         }
     }
 
-    fun setListaTrabajadores(listTrabajadores: ArrayList<TrabajadorItem>){
-        listaTrabajadores = listTrabajadores
-        notifyDataSetChanged()
-    }
-
     interface SectionRecyclerViewListener {
         fun onItemClick(itemPosition: Int)
-        fun onDeleteClick(itemPosition: Int)
     }
-
 }

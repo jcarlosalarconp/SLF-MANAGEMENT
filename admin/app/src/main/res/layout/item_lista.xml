@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:cardview="http://schemas.android.com/tools">
+    android:background="@drawable/custom_border">
 
     <TextView
         android:id="@+id/tituloItemLista"
