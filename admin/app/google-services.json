@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "602942975693",
+    "firebase_url": "https://slf-managementbd.firebaseio.com",
+    "project_id": "slf-managementbd",
+    "storage_bucket": "slf-managementbd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602942975693:android:4e9d8dc1aaf7911dca8384",
+        "android_client_info": {
+          "package_name": "com.example.slf_management"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "602942975693-grlel3fh1tpvi02ssb9smpi6oo00bobs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQ-uxjV5muA-rLD-eWi9Y16Ld3OVK7zHs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "602942975693-grlel3fh1tpvi02ssb9smpi6oo00bobs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

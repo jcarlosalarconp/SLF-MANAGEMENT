@@ -18,9 +18,6 @@ import com.example.slf_management.items.FichaItem
 import com.example.slf_management.items.ListaItem
 import com.example.slf_management.items.TrabajadorItem
 import kotlinx.android.synthetic.main.activity_evento.*
-import kotlinx.android.synthetic.main.activity_material.*
-import kotlinx.android.synthetic.main.activity_personal.*
-import kotlinx.android.synthetic.main.item_header.*
 import java.time.LocalDate
 
 class EventoActivity : AppCompatActivity() {

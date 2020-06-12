@@ -24,7 +24,7 @@ class SectionRecyclerViewFichaAdapter(private val listaFicha: ArrayList<FichaIte
         return listaFicha.size
     }
 
-    fun setSectionRecyclerViewListener(listener: SectionRecyclerViewListener) {
+    fun setSectionRecyclerViewListener(listener: TrabajadoresAdapter.SectionRecyclerViewListener) {
         rvListener = listener
     }
 

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.slf_management.R
 import com.example.slf_management.adapter.SectionRecyclerViewFichaAdapter
 import com.example.slf_management.adapter.SectionRecyclerViewTrabajadorAdapter
+import com.example.slf_management.adapter.TrabajadoresAdapter
 import com.example.slf_management.items.FichaItem
 import kotlinx.android.synthetic.main.activity_lista_personal.*
 
@@ -32,10 +33,19 @@ class ListaPersonalActivity : AppCompatActivity() {
         listaTrabajadores.add(trabajador5)
         listaTrabajadores.add(trabajador6)
 
-        val adapterTrabajador = SectionRecyclerViewFichaAdapter(listaTrabajadores)
+        val adapterTrabajador = TrabajadoresAdapter(listaTrabajadores)
         val recyclerTrabajador = recyclerListaTrabajadores.findViewById<RecyclerView>(R.id.recyclerListaTrabajadores)
         val layoutManagerTrabajador = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerTrabajador.layoutManager = layoutManagerTrabajador
         recyclerTrabajador.adapter = adapterTrabajador
+
+
+        adapterTrabajador.setSectionRecyclerViewListener(object :TrabajadoresAdapter.SectionRecyclerViewListener{
+            override fun onItemClick(itemPosition: Int) {
+                //INSERT EN BASE DE DATOS
+                adapterTrabajador.setlistaTrabajador(listaTrabajadores)
+                finish()
+            }
+        })
     }
 }

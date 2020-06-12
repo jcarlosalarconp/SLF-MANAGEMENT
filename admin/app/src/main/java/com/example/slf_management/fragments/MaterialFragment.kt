@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.slf_management.R
 import com.example.slf_management.activitys.MaterialActivity
 import com.example.slf_management.adapter.MaterialAdapter
+import com.example.slf_management.items.ComentarioItem
 import com.example.slf_management.items.MaterialItem
 import java.time.LocalDate
 
@@ -38,16 +39,19 @@ class MaterialFragment : Fragment() {
         recyclerView?.layoutManager = gridLayoutManager
         recyclerView?.setHasFixedSize(true)
 
+        var listaComentarios:ArrayList<ComentarioItem> = ArrayList()
+
         var listaMaterial:ArrayList<MaterialItem> = ArrayList()
 
-        val material = MaterialItem("Altavoz Behringer Pequeño", true, R.drawable.material_icon)
-        val material2 = MaterialItem("Micrófono", false, R.drawable.material_icon)
-        val material3 = MaterialItem("Altavoz Behringer Grande", false, R.drawable.material_icon)
-        val material4 = MaterialItem("Altavoz Behringer Pequeño", true, R.drawable.material_icon)
-        val material5 = MaterialItem("Micrófono de mano", true, R.drawable.material_icon)
-        val material6 = MaterialItem("Caja de Materiales", false, R.drawable.material_icon)
-        val material7 = MaterialItem("Pata de Altavoz", false, R.drawable.material_icon)
-        val material8 = MaterialItem("Pie de piano", true, R.drawable.material_icon)
+        val material = MaterialItem(1,"Altavoz Behringer Pequeño","Sonido", true, R.drawable.material_icon, listaComentarios)
+        val material2 = MaterialItem(2,"Altavoz de Bateria","Sonido", true, R.drawable.material_icon, listaComentarios)
+        val material3 = MaterialItem(3,"Microfono de diadema","Sonido", false, R.drawable.material_icon, listaComentarios)
+        val material4 = MaterialItem(4,"Microfono de mano","Sonido", true, R.drawable.material_icon, listaComentarios)
+        val material5 = MaterialItem(5,"Maleta de sonido","Sonido", false, R.drawable.material_icon, listaComentarios)
+        val material6 = MaterialItem(6,"Caja de animación","Animacion", false, R.drawable.material_icon, listaComentarios)
+        val material7 = MaterialItem(7,"Traje de Spider-Man","Vestuario", true, R.drawable.material_icon, listaComentarios)
+        val material8 = MaterialItem(8,"Pie de piano","Montaje", false, R.drawable.material_icon, listaComentarios)
+
 
         listaMaterial.add(material)
         listaMaterial.add(material2)

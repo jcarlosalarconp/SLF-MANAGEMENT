@@ -6,20 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".activitys.NuevoEventoActivity"
     android:background="@color/blue_grey_active">
-    <ImageView
-        android:id="@+id/imagenNuevoEvento"
-        android:layout_width="176dp"
-        android:layout_height="172dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/personal_icon" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerNuevoEvento"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="match_parent"
         android:layout_marginBottom="48dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"

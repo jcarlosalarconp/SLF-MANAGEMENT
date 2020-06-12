@@ -1,13 +1,12 @@
 package com.example.slf_management
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
 import androidx.viewpager.widget.ViewPager
-import com.example.slf_management.activitys.EventoActivity
 import com.example.slf_management.activitys.NuevoEventoActivity
 import com.example.slf_management.activitys.NuevoMaterialActivity
 import com.example.slf_management.activitys.NuevoPersonalActivity
@@ -15,10 +14,13 @@ import com.example.slf_management.adapter.FragmentAdapter
 import com.example.slf_management.fragments.EventosFragment
 import com.example.slf_management.fragments.MaterialFragment
 import com.example.slf_management.fragments.PersonalFragment
+import com.example.slf_management.items.MaterialItem
 import com.gauravk.bubblenavigation.BubbleNavigationLinearView
 import com.gauravk.bubblenavigation.listener.BubbleNavigationChangeListener
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_main.view.*
+import com.google.android.gms.tasks.OnFailureListener
+import com.google.android.gms.tasks.OnSuccessListener
+import com.google.firebase.firestore.DocumentReference
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val fragmentAdapter=FragmentAdapter(supportFragmentManager)
+        val fragmentAdapter = FragmentAdapter(supportFragmentManager)
         val materialTab = MaterialFragment()
         val eventosTab = EventosFragment()
 
@@ -39,8 +41,8 @@ class MainActivity : AppCompatActivity() {
         fragmentAdapter.addFragments(eventosTab)
         fragmentAdapter.addFragments(personalTab)
 
-        viewPagerFragment.adapter=fragmentAdapter
-        viewPagerFragment.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
+        viewPagerFragment.adapter = fragmentAdapter
+        viewPagerFragment.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {
             }
 
@@ -54,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         })
         viewPagerFragment.setCurrentItem(1)
 
-        navigation.setNavigationChangeListener(object : BubbleNavigationChangeListener{
+        navigation.setNavigationChangeListener(object : BubbleNavigationChangeListener {
             override fun onNavigationChanged(view: View?, position: Int) {
                 viewPagerFragment.setCurrentItem(position, true)
                 positionFragment = position
@@ -62,7 +64,7 @@ class MainActivity : AppCompatActivity() {
         })
         val fab: View = findViewById(R.id.fabAñadir)
         fab.setOnClickListener { view ->
-            when(positionFragment){
+            when (positionFragment) {
                 0 -> {
                     val intent = Intent(this, NuevoMaterialActivity::class.java)
                     startActivity(intent)
@@ -77,5 +79,20 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+/*
+        val material1 = MaterialItem(1,"Altavoz Behringer Pequeño","Sonido", true, R.drawable.material_icon, listaComentarios)
+        val material: MutableMap<String, Any> = HashMap()
+        material["id"] = material1.nombreMaterial
+
+
+// Add a new document with a generated ID
+
+// Add a new document with a generated ID
+        db.collection("users")
+                .add(material)
+                .addOnSuccessListener(OnSuccessListener<DocumentReference> { documentReference -> Log.d(FragmentActivity.TAG, "DocumentSnapshot added with ID: " + documentReference.id) })
+                .addOnFailureListener(OnFailureListener { e -> Log.w(FragmentActivity.TAG, "Error adding document", e) })
+     */
     }
+
 }
