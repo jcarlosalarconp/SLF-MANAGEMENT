@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,9 +16,12 @@ import com.example.slf_management.adapter.SectionRecyclerViewComentariosAdapter
 import com.example.slf_management.adapter.SectionRecyclerViewEventosAdapter
 import com.example.slf_management.items.Comentario
 import com.example.slf_management.items.Evento
+import com.example.slf_management.items.ListaComentarios
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_material.*
 import java.time.LocalDate
 import java.util.*
+import kotlin.collections.ArrayList
 
 class MaterialActivity : AppCompatActivity() {
 
@@ -25,6 +29,9 @@ class MaterialActivity : AppCompatActivity() {
     private val imagenMaterialActivity by lazy { findViewById<ImageView>(R.id.imagenMaterialActivity) }
     private var mostrarComentarios = true
     private var mostrarEventos = true
+    private val db by lazy { FirebaseFirestore.getInstance()}
+    private var listaComentarios = ListaComentarios(arrayListOf())
+    private var adapterComentarios = SectionRecyclerViewComentariosAdapter(listaComentarios.listaComentario)
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,23 +47,20 @@ class MaterialActivity : AppCompatActivity() {
         title = "Material"
 
         //COMENTARIOS
-        val listaComentarios : ArrayList<Comentario> = arrayListOf()
-        val comentario = Comentario("Juan Carlos", "Cable roto", LocalDate.now())
-        val comentario2 = Comentario("Javier", "Rotura lateral", LocalDate.now())
-        val comentario3 = Comentario("Lorena", "Falta corriente", LocalDate.now())
-        val comentario4 = Comentario("Juan Carlos", "Cable roto", LocalDate.now())
-        val comentario5 = Comentario("Javier", "Rotura lateral", LocalDate.now())
-        val comentario6 = Comentario("Lorena", "Falta corriente", LocalDate.now())
 
-        listaComentarios.add(comentario)
-        listaComentarios.add(comentario2)
-        listaComentarios.add(comentario3)
-        listaComentarios.add(comentario4)
-        listaComentarios.add(comentario5)
-        listaComentarios.add(comentario6)
+        db.collection("slf-management").document("comentarios").get().addOnCompleteListener{
+            task ->
+            if (task.isSuccessful){
+                listaComentarios = task.result!!.toObject(ListaComentarios::class.java)!!
+                adapterComentarios.setListaComentario(listaComentarios.listaComentario)
+                Toast.makeText(this@MaterialActivity, listaComentarios.listaComentario.size.toString(), Toast.LENGTH_LONG).show()
 
+            }else{
+                Toast.makeText(this@MaterialActivity, task.exception.toString(), Toast.LENGTH_LONG).show()
 
-        val adapterComentarios = SectionRecyclerViewComentariosAdapter(listaComentarios)
+            }
+        }
+
         val recyclerMenuComentarios = listaComentario.findViewById<RecyclerView>(R.id.recyclerMenu)
         val layoutManagerComentarios = LinearLayoutManager(this@MaterialActivity, LinearLayoutManager.VERTICAL, false)
         recyclerMenuComentarios.layoutManager = layoutManagerComentarios

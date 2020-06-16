@@ -7,8 +7,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.slf_management.R
 import com.example.slf_management.items.Comentario
+import com.example.slf_management.items.ListaComentarios
 
-class SectionRecyclerViewComentariosAdapter(private val comentarios: java.util.ArrayList<Comentario>): RecyclerView.Adapter<SectionRecyclerViewComentariosAdapter.SectionViewHolder>() {
+class SectionRecyclerViewComentariosAdapter(private var comentarios: java.util.ArrayList<Comentario>): RecyclerView.Adapter<SectionRecyclerViewComentariosAdapter.SectionViewHolder>() {
     private var rvListener: SectionRecyclerViewListener?= null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SectionViewHolder {
@@ -35,7 +36,7 @@ class SectionRecyclerViewComentariosAdapter(private val comentarios: java.util.A
         fun bind(list: ArrayList<Comentario>, position: Int, listener: SectionRecyclerViewListener?) {
             nombre.text = list[position].nombre
             comentario.text = list[position].comentario
-            fecha.text = list[position].fecha.toString()
+            fecha.text = list[position].fecha
 
             itemView.setOnClickListener {
                 listener?.onItemClick(position)
@@ -45,5 +46,10 @@ class SectionRecyclerViewComentariosAdapter(private val comentarios: java.util.A
 
     interface SectionRecyclerViewListener {
         fun onItemClick(itemPosition: Int)
+    }
+
+    fun setListaComentario(listaComentarios: ArrayList<Comentario>){
+        comentarios = listaComentarios
+        notifyDataSetChanged()
     }
 }

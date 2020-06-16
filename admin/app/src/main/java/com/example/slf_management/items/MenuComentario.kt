@@ -15,5 +15,7 @@ data class Section (
 data class Comentario (
     var nombre : String,
     var comentario : String,
-    var fecha : LocalDate
-)
+    var fecha : String
+){
+    constructor():this("","","")
+}

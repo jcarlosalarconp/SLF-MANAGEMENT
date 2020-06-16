@@ -65,4 +65,8 @@ class MaterialAdapter(var context: Context, var arrayList: ArrayList<MaterialIte
         fun onClick(position: Int)
     }
 
+    fun setListaMateriales(listaMateriales: ArrayList<MaterialItem>){
+        arrayList = listaMateriales
+        notifyDataSetChanged()
+    }
 }
