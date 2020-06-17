@@ -38,7 +38,7 @@ class MaterialFragment : Fragment() {
         gridLayoutManager = GridLayoutManager(context, 3)
         recyclerView?.layoutManager = gridLayoutManager
         recyclerView?.setHasFixedSize(true)
-
+        //CREACIÓN DE LISTA E ITEMS (CAMBIAR POR BASE DE DATOS)
         var listaComentarios:ArrayList<ComentarioItem> = ArrayList()
 
         var listaMaterial:ArrayList<MaterialItem> = ArrayList()
@@ -52,7 +52,7 @@ class MaterialFragment : Fragment() {
         val material7 = MaterialItem(7,"Traje de Spider-Man","Vestuario", true, R.drawable.material_icon, listaComentarios)
         val material8 = MaterialItem(8,"Pie de piano","Montaje", false, R.drawable.material_icon, listaComentarios)
 
-
+        //INSERTANDO ITEMS EN LISTA
         listaMaterial.add(material)
         listaMaterial.add(material2)
         listaMaterial.add(material3)
@@ -62,8 +62,10 @@ class MaterialFragment : Fragment() {
         listaMaterial.add(material7)
         listaMaterial.add(material8)
 
+        //SINCRONIZACIÓN CON EL ADAPTER
         val adapter = MaterialAdapter(inflater.context, listaMaterial)
 
+        //FUNCION ONCLICK QUE DIRIGE AL ACTIVITY MATERIAL
         adapter.setMaterialListener(object : MaterialAdapter.MaterialListener {
             override fun onClick(position: Int) {
                 val intent = Intent(context, MaterialActivity::class.java)

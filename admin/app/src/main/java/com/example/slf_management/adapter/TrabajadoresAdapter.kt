@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.slf_management.R
 import com.example.slf_management.items.FichaItem
-import com.example.slf_management.items.TrabajadorItem
 
 class TrabajadoresAdapter(private var listaTrabajador: ArrayList<FichaItem>): RecyclerView.Adapter<TrabajadoresAdapter.SectionViewHolder>() {
     private var rvListener: SectionRecyclerViewListener?= null
@@ -43,7 +42,7 @@ class TrabajadoresAdapter(private var listaTrabajador: ArrayList<FichaItem>): Re
             }
         }
     }
-    
+    //FUNCION QUE DEVUELVE LA LISTA TRABAJADORES ACTUALIZADA
     fun setlistaTrabajador(listTrabajador: ArrayList<FichaItem>){
         listaTrabajador = listTrabajador
         notifyDataSetChanged()

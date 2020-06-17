@@ -2,28 +2,25 @@ package com.example.slf_management.adapter
 
 
 import android.content.Context
-import android.database.DataSetObserver
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.ListAdapter
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.slf_management.R
 import com.example.slf_management.items.EventoItem
 
+/**
+ * ADAPTER DEL ITEM EVENTO
+ */
 class EventosAdapter(var context: Context, var arrayList: ArrayList<EventoItem>) :
         RecyclerView.Adapter<EventosAdapter.ItemHolder>() {
 
     private lateinit var mListener: EventosListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
-
         val itemHolder = LayoutInflater.from(parent.context).inflate(R.layout.item_evento, parent, false)
         return ItemHolder(itemHolder)
-
     }
 
     override fun getItemCount(): Int {

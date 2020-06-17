@@ -8,7 +8,7 @@
     cardview:cardElevation="5dp"
     cardview:cardPreventCornerOverlap="true"
     cardview:cardUseCompatPadding="true"
-    cardview:cardBackgroundColor="@color/blue_grey_inactive">
+    cardview:cardBackgroundColor="@color/turquesa">
 
     <RelativeLayout
         android:layout_width="wrap_content"

@@ -15,6 +15,7 @@ class NuevoPersonalActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nuevo_personal)
 
+        //CREACIÓN DE LISTA E ITEMS (CAMBIAR POR BASE DE DATOS)
         var listaElementos: ArrayList<NuevoElementoItem> = arrayListOf()
 
         val elemento1 = NuevoElementoItem("Nombre", "")
@@ -25,6 +26,7 @@ class NuevoPersonalActivity : AppCompatActivity() {
         val elemento6 = NuevoElementoItem("Nº Seguridad Social", "")
         val elemento7 = NuevoElementoItem("Activo", "")
 
+        //INSERTANDO ITEMS EN LISTA
         listaElementos.add(elemento1)
         listaElementos.add(elemento2)
         listaElementos.add(elemento3)
@@ -33,6 +35,7 @@ class NuevoPersonalActivity : AppCompatActivity() {
         listaElementos.add(elemento6)
         listaElementos.add(elemento7)
 
+        //SINCRONIZACIÓN CON LOS ADAPTERS
         val adapter = NuevoElementoItemAdapter(listaElementos)
         val recycler = recyclerNuevoPersonal.findViewById<androidx.recyclerview.widget.RecyclerView>(com.example.slf_management.R.id.recyclerNuevoPersonal)
         val layoutManager= LinearLayoutManager(this@NuevoPersonalActivity, LinearLayoutManager.VERTICAL, false)

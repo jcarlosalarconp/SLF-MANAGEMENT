@@ -44,7 +44,7 @@ class SectionRecyclerViewTrabajadorAdapter(private var listaTrabajadores: ArrayL
             }
         }
     }
-
+    //FUNCION QUE DUVUELVE LA LISTA TRABAJADORES ACTUALIZADA
     fun setListaTrabajadores(listTrabajadores: ArrayList<TrabajadorItem>){
         listaTrabajadores = listTrabajadores
         notifyDataSetChanged()

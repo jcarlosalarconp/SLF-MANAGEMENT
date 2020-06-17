@@ -42,6 +42,7 @@ class PersonalFragment : Fragment() {
         recyclerView?.layoutManager = gridLayoutManager
         recyclerView?.setHasFixedSize(true)
 
+        //CREACIÓN DE LISTA E ITEMS (CAMBIAR POR BASE DE DATOS)
         var listaPersonal:ArrayList<PersonalItem> = ArrayList()
 
         val personal = PersonalItem("Juan Carlos", R.drawable.personal_icon)
@@ -49,13 +50,16 @@ class PersonalFragment : Fragment() {
         val personal3 = PersonalItem("Juan Carlos", R.drawable.personal_icon)
         val personal4 = PersonalItem("Javier", R.drawable.personal_icon)
 
+        //INSERTANDO ITEMS EN LISTA
         listaPersonal.add(personal)
         listaPersonal.add(personal2)
         listaPersonal.add(personal3)
         listaPersonal.add(personal4)
 
+        //SINCRONIZACIÓN CON EL ADAPTER
         val adapter = PersonalAdapter(inflater.context, listaPersonal)
 
+        //FUNCION ONCLICK QUE DIRIGE A ACTIVIRY PERSONAL
         adapter.setPersonalListener(object : PersonalAdapter.PersonalListener {
             override fun onClick(position: Int) {
                 val intent = Intent(context, PersonalActivity::class.java)

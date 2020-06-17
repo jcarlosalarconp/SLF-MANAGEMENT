@@ -4,32 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activitys.EventoActivity">
+    tools:context=".activitys.EventoActivity"
+    android:background="@color/dark_blue">
+
     <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <LinearLayout
+        android:id="@+id/nestedScrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="-123dp">
 
-        <include
-            android:id="@+id/listaRecyclerDatosGenerales"
-            layout="@layout/item_header" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <include
-            android:id="@+id/listaRecyclerInformacionDeLaFiesta"
-            layout="@layout/item_header" />
-        <include
-            android:id="@+id/listaRecyclerInformacionDelCliente"
-            layout="@layout/item_header" />
-        <include
-            android:id="@+id/listaRecyclerTrabajadores"
-            layout="@layout/item_header_trabajadores" />
-        <include
-        android:id="@+id/listaRecyclerFichas"
-        layout="@layout/item_header" />
-    </LinearLayout>
+            <include
+                android:id="@+id/listaRecyclerDatosGenerales"
+                layout="@layout/item_header" />
+
+            <include
+                android:id="@+id/listaRecyclerInformacionDeLaFiesta"
+                layout="@layout/item_header" />
+
+            <include
+                android:id="@+id/listaRecyclerInformacionDelCliente"
+                layout="@layout/item_header" />
+
+            <include
+                android:id="@+id/listaRecyclerTrabajadores"
+                layout="@layout/item_header_trabajadores" />
+
+            <include
+                android:id="@+id/listaRecyclerFichas"
+                layout="@layout/item_header" />
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

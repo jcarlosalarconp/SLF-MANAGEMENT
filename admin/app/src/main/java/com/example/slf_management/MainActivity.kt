@@ -31,11 +31,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        //DECLARACION DE VARIABLES
         val fragmentAdapter = FragmentAdapter(supportFragmentManager)
         val materialTab = MaterialFragment()
         val eventosTab = EventosFragment()
 
+        //AÑADIENDO FRAGMENTS
         val personalTab = PersonalFragment()
         fragmentAdapter.addFragments(materialTab)
         fragmentAdapter.addFragments(eventosTab)
@@ -62,6 +63,9 @@ class MainActivity : AppCompatActivity() {
                 positionFragment = position
             }
         })
+
+        //BOTON FLOTANTE
+            //DEPENDIENDO DE EN QUE FRAGMENT SE SITUE, ENVIARÁ A UN ACTIVITY DIFERENTE
         val fab: View = findViewById(R.id.fabAñadir)
         fab.setOnClickListener { view ->
             when (positionFragment) {
@@ -79,20 +83,12 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-/*
-        val material1 = MaterialItem(1,"Altavoz Behringer Pequeño","Sonido", true, R.drawable.material_icon, listaComentarios)
-        val material: MutableMap<String, Any> = HashMap()
-        material["id"] = material1.nombreMaterial
 
+        when(positionFragment){
+            0 -> {
 
-// Add a new document with a generated ID
-
-// Add a new document with a generated ID
-        db.collection("users")
-                .add(material)
-                .addOnSuccessListener(OnSuccessListener<DocumentReference> { documentReference -> Log.d(FragmentActivity.TAG, "DocumentSnapshot added with ID: " + documentReference.id) })
-                .addOnFailureListener(OnFailureListener { e -> Log.w(FragmentActivity.TAG, "Error adding document", e) })
-     */
+            }
+        }
     }
 
 }

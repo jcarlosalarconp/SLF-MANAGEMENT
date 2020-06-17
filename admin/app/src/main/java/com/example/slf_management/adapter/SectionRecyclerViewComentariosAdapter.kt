@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.slf_management.R
 import com.example.slf_management.items.Comentario
-import com.example.slf_management.items.ListaComentarios
 
 class SectionRecyclerViewComentariosAdapter(private var comentarios: java.util.ArrayList<Comentario>): RecyclerView.Adapter<SectionRecyclerViewComentariosAdapter.SectionViewHolder>() {
     private var rvListener: SectionRecyclerViewListener?= null
@@ -48,6 +47,7 @@ class SectionRecyclerViewComentariosAdapter(private var comentarios: java.util.A
         fun onItemClick(itemPosition: Int)
     }
 
+    //FUNCION QUE DEVUELVE LA LISTA COMENTARIOS ACTUALIZADA
     fun setListaComentario(listaComentarios: ArrayList<Comentario>){
         comentarios = listaComentarios
         notifyDataSetChanged()

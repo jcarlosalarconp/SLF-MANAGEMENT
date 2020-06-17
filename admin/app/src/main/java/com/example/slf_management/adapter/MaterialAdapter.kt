@@ -7,9 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.slf_management.R
@@ -35,7 +33,6 @@ class MaterialAdapter(var context: Context, var arrayList: ArrayList<MaterialIte
         mListener = listener
     }
 
-    @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: ItemHolder, position: Int) {
         val materialItem: MaterialItem = arrayList.get(position)
 
@@ -43,9 +40,9 @@ class MaterialAdapter(var context: Context, var arrayList: ArrayList<MaterialIte
         holder.nombre.text = materialItem.nombreMaterial
 
         if(materialItem.disponibilidadMaterial){
-            holder.fondo.setCardBackgroundColor(R.color.colorPrimary)
+           holder.fondo.setCardBackgroundColor(holder.fondo.context.getColor(R.color.yellow))
         }else{
-            holder.fondo.setCardBackgroundColor(R.color.red_active)
+           holder.fondo.setCardBackgroundColor(holder.fondo.context.getColor(R.color.aviableFalse))
 
         }
 
@@ -65,6 +62,7 @@ class MaterialAdapter(var context: Context, var arrayList: ArrayList<MaterialIte
         fun onClick(position: Int)
     }
 
+    //FUNCION QUE DEVUELVE LA LISTA MATERIALES ACTUALIZADA
     fun setListaMateriales(listaMateriales: ArrayList<MaterialItem>){
         arrayList = listaMateriales
         notifyDataSetChanged()

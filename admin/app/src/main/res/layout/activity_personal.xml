@@ -29,31 +29,188 @@
         android:layout_height="31dp"
         android:layout_marginStart="117dp"
         android:layout_marginTop="16dp"
-        android:text="TextView"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagenPersonalActivity" />
 
-    <TextView
-        android:id="@+id/disponibilidadPersonalActivity"
-        android:layout_width="176dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="117dp"
-        android:layout_marginTop="10dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombrePersonalActivity" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerPersonalInfo"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
-        android:layout_height="448dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/disponibilidadPersonalActivity"
-        android:orientation="vertical" />
+        app:layout_constraintTop_toBottomOf="@+id/nombrePersonalActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/blue_grey_inactive">
+
+            <TextView
+                android:id="@+id/tituloNombrePersonal"
+                android:layout_width="130dp"
+                android:layout_height="70dp"
+                android:background="@drawable/custom_border"
+                android:fontFamily="@font/neufreit"
+                android:gravity="center"
+                android:text="Nombre"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/tituloTelefonoPersonal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/nombrePersonal"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:background="@drawable/custom_border"
+                android:fontFamily="@font/neufreit"
+                android:gravity="center|start"
+                android:paddingStart="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/telefonoPersonal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/tituloNombrePersonal"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tituloTelefonoPersonal"
+                android:layout_width="130dp"
+                android:layout_height="70dp"
+                android:background="@drawable/custom_border"
+                android:fontFamily="@font/neufreit"
+                android:gravity="center"
+                android:text="Teléfono"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/tituloDniPersonal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tituloNombrePersonal" />
+
+            <EditText
+                android:id="@+id/telefonoPersonal"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:background="@drawable/custom_border"
+                android:fontFamily="@font/neufreit"
+                android:gravity="center|start"
+                android:paddingStart="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/dniPersonal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/tituloTelefonoPersonal"
+                app:layout_constraintTop_toBottomOf="@+id/nombrePersonal" />
+
+            <TextView
+                android:id="@+id/tituloDniPersonal"
+                android:layout_width="130dp"
+                android:layout_height="70dp"
+                android:background="@drawable/custom_border"
+                android:fontFamily="@font/neufreit"
+                android:gravity="center"
+                android:text="DNI"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/tituloDireccionPersonal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tituloTelefonoPersonal" />
+
+            <EditText
+                android:id="@+id/dniPersonal"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:background="@drawable/custom_border"
+                android:fontFamily="@font/neufreit"
+                android:gravity="center|start"
+                android:paddingStart="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/direccionPersonal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/tituloDniPersonal"
+                app:layout_constraintTop_toBottomOf="@+id/telefonoPersonal" />
+
+            <TextView
+                android:id="@+id/tituloDireccionPersonal"
+                android:layout_width="130dp"
+                android:layout_height="70dp"
+                android:background="@drawable/custom_border"
+                android:fontFamily="@font/neufreit"
+                android:gravity="center"
+                android:text="Dirección"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/tituloTelefonoExternoPersonal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tituloDniPersonal" />
+
+            <EditText
+                android:id="@+id/direccionPersonal"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:background="@drawable/custom_border"
+                android:fontFamily="@font/neufreit"
+                android:gravity="center|start"
+                android:paddingStart="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/telefonoExternoPersonal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/tituloDireccionPersonal"
+                app:layout_constraintTop_toBottomOf="@+id/dniPersonal" />
+
+            <TextView
+                android:id="@+id/tituloTelefonoExternoPersonal"
+                android:layout_width="130dp"
+                android:layout_height="70dp"
+                android:background="@drawable/custom_border"
+                android:fontFamily="@font/neufreit"
+                android:gravity="center"
+                android:text="Teléfono Externo"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/tituloNumeroSSPersonal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tituloDireccionPersonal" />
+
+            <EditText
+                android:id="@+id/telefonoExternoPersonal"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:background="@drawable/custom_border"
+                android:fontFamily="@font/neufreit"
+                android:gravity="center|start"
+                android:paddingStart="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/numeroSSPersonal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/tituloDireccionPersonal"
+                app:layout_constraintTop_toBottomOf="@+id/direccionPersonal" />
+
+            <TextView
+                android:id="@+id/tituloNumeroSSPersonal"
+                android:layout_width="130dp"
+                android:layout_height="70dp"
+                android:background="@drawable/custom_border"
+                android:fontFamily="@font/neufreit"
+                android:gravity="center"
+                android:text="Nº Seguridad Social"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tituloTelefonoExternoPersonal" />
+
+            <EditText
+                android:id="@+id/numeroSSPersonal"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:background="@drawable/custom_border"
+                android:fontFamily="@font/neufreit"
+                android:gravity="center|start"
+                android:paddingStart="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/tituloDireccionPersonal"
+                app:layout_constraintTop_toBottomOf="@+id/telefonoExternoPersonal" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

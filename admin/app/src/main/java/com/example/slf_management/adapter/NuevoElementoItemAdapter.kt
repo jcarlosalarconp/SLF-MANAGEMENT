@@ -1,7 +1,6 @@
 package com.example.slf_management.adapter
 
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

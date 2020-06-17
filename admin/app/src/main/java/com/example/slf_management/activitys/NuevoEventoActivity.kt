@@ -14,7 +14,7 @@ class NuevoEventoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nuevo_evento)
-
+        //CREACIÓN DE LISTA E ITEMS (CAMBIAR POR BASE DE DATOS)
         var listaElementos: ArrayList<NuevoElementoItem> = arrayListOf()
 
         val elemento1 = NuevoElementoItem("Dirección de Celebración", "")
@@ -25,6 +25,8 @@ class NuevoEventoActivity : AppCompatActivity() {
         val elemento6 = NuevoElementoItem("Nombre del Cliente", "")
         val elemento7 = NuevoElementoItem("DNI del Cliente", "")
         val elemento8 = NuevoElementoItem("Teléfono del Cliente", "")
+
+        //INSERTANDO ITEMS EN LISTA
         listaElementos.add(elemento1)
         listaElementos.add(elemento2)
         listaElementos.add(elemento3)
@@ -34,6 +36,7 @@ class NuevoEventoActivity : AppCompatActivity() {
         listaElementos.add(elemento7)
         listaElementos.add(elemento8)
 
+        //SINCRONIZACIÓN CON LOS ADAPTERS
         val adapter = NuevoElementoItemAdapter(listaElementos)
         val recycler = recyclerNuevoEvento.findViewById<androidx.recyclerview.widget.RecyclerView>(com.example.slf_management.R.id.recyclerNuevoEvento)
         val layoutManager= LinearLayoutManager(this@NuevoEventoActivity, LinearLayoutManager.VERTICAL, false)

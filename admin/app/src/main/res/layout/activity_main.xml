@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/blue_grey_active">
+    android:background="@color/dark_blue">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
@@ -29,15 +29,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/blue_grey_inactive">
+        android:background="@color/blue_grey_active">
 
         <com.gauravk.bubblenavigation.BubbleToggleView
             android:id="@+id/l_item_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:bt_colorActive="@color/red_active"
-            app:bt_colorInactive="@color/red_inactive"
+            app:bt_colorActive="@color/yellow"
+            app:bt_colorInactive="@color/yellow_inactive"
             app:bt_icon="@drawable/material_icon"
+            app:bt_shape="@drawable/default_background_oval"
             app:bt_title="@string/material"
             />
 
@@ -47,18 +48,20 @@
             android:layout_height="wrap_content"
             app:bt_active="true"
             app:bt_badgeBackgroundColor="@color/green_active"
-            app:bt_colorActive="@color/blue_active"
-            app:bt_colorInactive="@color/blue_inactive"
+            app:bt_colorActive="@color/green"
+            app:bt_colorInactive="@color/green_inactive"
             app:bt_icon="@drawable/eventos_icon"
+            app:bt_shape="@drawable/default_background_oval"
             app:bt_title="@string/eventos" />
 
         <com.gauravk.bubblenavigation.BubbleToggleView
             android:id="@+id/l_item_profile_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:bt_colorActive="@color/green_active"
-            app:bt_colorInactive="@color/green_active"
+            app:bt_colorActive="@color/turquesa"
+            app:bt_colorInactive="@color/turquesa_inactive"
             app:bt_icon="@drawable/personal_icon"
+            app:bt_shape="@drawable/default_background_oval"
             app:bt_title="@string/personal" />
 
     </com.gauravk.bubblenavigation.BubbleNavigationLinearView>

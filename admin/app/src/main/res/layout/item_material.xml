@@ -12,7 +12,7 @@
     cardview:cardPreventCornerOverlap="true"
     cardview:cardUseCompatPadding="true"
     app:ignore="NamespaceTypo"
-    cardview:cardBackgroundColor="@color/blue_grey_inactive">
+   >
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -36,11 +36,7 @@
             android:text="Nombre"
             android:fontFamily="@font/neufreit"
             android:textAlignment="inherit"
-            android:textSize="12sp" /><![CDATA[
-
-        />
-
-    ]]>
+            android:textSize="12sp" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

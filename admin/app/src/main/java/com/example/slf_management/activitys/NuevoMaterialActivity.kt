@@ -1,25 +1,15 @@
 package com.example.slf_management.activitys
 
-import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.slf_management.MainActivity
 import com.example.slf_management.R
-import com.example.slf_management.adapter.MaterialAdapter
-import com.example.slf_management.adapter.NuevoElementoItemAdapter
-import com.example.slf_management.fragments.MaterialFragment
 import com.example.slf_management.items.ListaMateriales
 import com.example.slf_management.items.MaterialItem
-import com.example.slf_management.items.NuevoElementoItem
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_material.*
-import kotlinx.android.synthetic.main.activity_nuevo_material.*
-import java.util.ArrayList
 
 class NuevoMaterialActivity : AppCompatActivity() {
     private val db by lazy { FirebaseFirestore.getInstance()}
@@ -60,6 +50,9 @@ class NuevoMaterialActivity : AppCompatActivity() {
             }
 
         }
+
+
+
     }
 
 

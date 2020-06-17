@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         cardview:cardCornerRadius="4dp"
-        app:cardBackgroundColor="@color/blue_grey_inactive"
+        app:cardBackgroundColor="@color/green"
         tools:ignore="MissingConstraints">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
