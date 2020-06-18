@@ -47,7 +47,9 @@ class SectionRecyclerViewComentariosAdapter(private var comentarios: java.util.A
         fun onItemClick(itemPosition: Int)
     }
 
-    //FUNCION QUE DEVUELVE LA LISTA COMENTARIOS ACTUALIZADA
+    /**
+     * FUNCION QUE DEVUELVE LA LISTA COMENTARIOS ACTUALIZADA
+     */
     fun setListaComentario(listaComentarios: ArrayList<Comentario>){
         comentarios = listaComentarios
         notifyDataSetChanged()

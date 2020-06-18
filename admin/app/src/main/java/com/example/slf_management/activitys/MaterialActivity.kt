@@ -44,8 +44,12 @@ class MaterialActivity : AppCompatActivity() {
 
         title = "Material"
 
-        //COMENTARIOS
-            //RECOGE DE BASE DE DATOS LOS COMENTARIOS
+        /**
+         * LISTA COMENTARIOS
+         */
+        /**
+         * RECOGE DE BASE DE DATOS LOS COMENTARIOS
+         */
         db.collection("slf-management").document("comentarios").get().addOnCompleteListener{ task ->
             if (task.isSuccessful){
                 listaComentarios = task.result!!.toObject(ListaComentarios::class.java)!!
@@ -56,7 +60,9 @@ class MaterialActivity : AppCompatActivity() {
             }
         }
 
-        //SINCRONIZACIÓN CON LOS ADAPTERS
+        /**
+         * SINCRONIZACIÓN CON LOS ADAPTERS
+         */
         val recyclerMenuComentarios = listaComentario.findViewById<RecyclerView>(R.id.recyclerMenu)
         val layoutManagerComentarios = LinearLayoutManager(this@MaterialActivity, LinearLayoutManager.VERTICAL, false)
         recyclerMenuComentarios.layoutManager = layoutManagerComentarios
@@ -64,7 +70,9 @@ class MaterialActivity : AppCompatActivity() {
         recyclerMenuComentarios.visibility = View.VISIBLE
         listaComentario.setOnClickListener(object : View.OnClickListener{
 
-            //FUNCIÓN ONCLIC PARA OCULTAR/MOSTRAR LISTA
+            /**
+             * FUNCIÓN ONCLIC PARA OCULTAR/MOSTRAR LISTA
+             */
             override fun onClick(v: View?) {
 
                 if (!mostrarComentarios) {
@@ -78,25 +86,35 @@ class MaterialActivity : AppCompatActivity() {
             }
         })
 
-        //ESTABLECIENDO TITULO
+        /**
+         * ESTABLECIENDO TITULO
+         */
         val textoComentario = listaComentario.findViewById<TextView>(R.id.tituloMenu)
         textoComentario.text = "Comentarios"
 
-        //EVENTOS
-            //CREACIÓN DE LISTA E ITEMS (CAMBIAR POR BASE DE DATOS)
+        /**
+         * LISTA EVENTOS
+         */
+        /**
+         * CREACIÓN DE LISTA E ITEMS (CAMBIAR POR BASE DE DATOS)
+         */
         val listaEventos : ArrayList<Evento> = arrayListOf()
         val evento1 = Evento(1, "Show de Funky", "Málaga", LocalDate.now())
         val evento2 = Evento(2, "Show de Wiwi", "Pizarra", LocalDate.now())
         val evento3 = Evento(3, "Show de Rickypin", "San Pedro", LocalDate.now())
         val evento4 = Evento(4, "Show de Candy", "Alhaurin el Grande", LocalDate.now())
 
-            //INSERTANDO ITEMS EN LISTA
+        /**
+         * INSERTANDO ITEMS EN LISTA
+         */
         listaEventos.add(evento1)
         listaEventos.add(evento2)
         listaEventos.add(evento3)
         listaEventos.add(evento4)
 
-            //SINCRONIZACIÓN CON LOS ADAPTERS
+        /**
+         * SINCRONIZACIÓN CON LOS ADAPTERS
+         */
         val adapter = SectionRecyclerViewEventosAdapter(listaEventos)
         val recyclerMenu = listaEvento.findViewById<RecyclerView>(R.id.recyclerMenu)
         val layoutManager = LinearLayoutManager(this@MaterialActivity, LinearLayoutManager.VERTICAL, false)
@@ -104,7 +122,9 @@ class MaterialActivity : AppCompatActivity() {
         recyclerMenu.adapter = adapter
         recyclerMenu.visibility = View.VISIBLE
 
-            //FUNCIÓN ONCLIC PARA OCULTAR/MOSTRAR LISTA
+        /**
+         * FUNCIÓN ONCLIC PARA OCULTAR/MOSTRAR LISTA
+         */
         listaEvento.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
 
@@ -118,17 +138,29 @@ class MaterialActivity : AppCompatActivity() {
                 }
             }
         })
-        //ESTABLECIENDO TITULO
+        /**
+         * ESTABLECIENDO TITULO
+         */
         val textoEvento = listaEvento.findViewById<TextView>(R.id.tituloMenu)
         textoEvento.text = "Eventos"
 
-        //FUNCIÓN ONCLICK QUE REDIRIGE AL ACTIVITYEVENTO
+        /**
+         * FUNCIÓN ONCLICK QUE REDIRIGE AL ACTIVITYEVENTO
+         */
         adapter.setSectionRecyclerViewListener(object :SectionRecyclerViewEventosAdapter.SectionRecyclerViewListener{
             override fun onItemClick(itemPosition: Int) {
                 val intent = Intent(this@MaterialActivity, EventoActivity::class.java)
                 startActivity(intent)
             }
         })
+
+        /**
+         * IMAGEN
+         */
+        val imagen = findViewById<ImageView>(R.id.imagenMaterialActivity)
+        imagen.setOnClickListener{
+            Toast.makeText(this, "Hacer foto", Toast.LENGTH_SHORT).show()
+        }
     }
 
 }

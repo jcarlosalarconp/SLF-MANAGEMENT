@@ -42,7 +42,10 @@ class TrabajadoresAdapter(private var listaTrabajador: ArrayList<FichaItem>): Re
             }
         }
     }
-    //FUNCION QUE DEVUELVE LA LISTA TRABAJADORES ACTUALIZADA
+
+    /**
+     * FUNCION QUE DEVUELVE LA LISTA TRABAJADORES ACTUALIZADA
+     */
     fun setlistaTrabajador(listTrabajador: ArrayList<FichaItem>){
         listaTrabajador = listTrabajador
         notifyDataSetChanged()

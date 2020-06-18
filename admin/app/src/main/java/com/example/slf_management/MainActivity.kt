@@ -31,12 +31,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //DECLARACION DE VARIABLES
+        /**
+         * DECLARACION DE VARIABLES
+         */
         val fragmentAdapter = FragmentAdapter(supportFragmentManager)
         val materialTab = MaterialFragment()
         val eventosTab = EventosFragment()
 
-        //AÑADIENDO FRAGMENTS
+        /**
+         * AÑADIENDO FRAGMENTS
+         */
         val personalTab = PersonalFragment()
         fragmentAdapter.addFragments(materialTab)
         fragmentAdapter.addFragments(eventosTab)
@@ -64,8 +68,12 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        //BOTON FLOTANTE
-            //DEPENDIENDO DE EN QUE FRAGMENT SE SITUE, ENVIARÁ A UN ACTIVITY DIFERENTE
+        /**
+         * BOTON FLOTANTE
+         */
+        /**
+         * DEPENDIENDO DE EN QUE FRAGMENT SE SITUE, ENVIARÁ A UN ACTIVITY DIFERENTE
+         */
         val fab: View = findViewById(R.id.fabAñadir)
         fab.setOnClickListener { view ->
             when (positionFragment) {

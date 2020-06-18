@@ -33,6 +33,7 @@ class SectionRecyclerViewTrabajadorAdapter(private var listaTrabajadores: ArrayL
         private val nombreTrabajador = itemView.findViewById<TextView>(R.id.nombreTrabajador)
         private val botonCancelar = itemView.findViewById<ImageView>(R.id.buttonCancelTrabajador)
 
+
         fun bind(list: ArrayList<TrabajadorItem>, position: Int, listener: SectionRecyclerViewListener?) {
             imagenTrabajador.setImageResource(list[position].imagenTrabajador)
             nombreTrabajador.text = list[position].nombreTrabajador
@@ -44,7 +45,11 @@ class SectionRecyclerViewTrabajadorAdapter(private var listaTrabajadores: ArrayL
             }
         }
     }
-    //FUNCION QUE DUVUELVE LA LISTA TRABAJADORES ACTUALIZADA
+
+
+    /**
+     *  FUNCION QUE DEVUELVE LA LISTA TRABAJADORES ACTUALIZADA
+     */
     fun setListaTrabajadores(listTrabajadores: ArrayList<TrabajadorItem>){
         listaTrabajadores = listTrabajadores
         notifyDataSetChanged()

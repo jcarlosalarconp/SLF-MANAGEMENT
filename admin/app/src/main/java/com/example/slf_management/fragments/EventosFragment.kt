@@ -38,7 +38,9 @@ class EventosFragment : Fragment() {
         recyclerView?.layoutManager = gridLayoutManager
         recyclerView?.setHasFixedSize(true)
 
-        //CREACIÓN DE LISTA E ITEMS (CAMBIAR POR BASE DE DATOS)
+        /**
+         * CREACIÓN DE LISTA E ITEMS (CAMBIAR POR BASE DE DATOS)
+         */
         var listaEventos:ArrayList<EventoItem> = ArrayList()
 
         val evento1 = EventoItem(1, "Show de Funky", "Málaga", LocalDate.now())
@@ -46,16 +48,22 @@ class EventosFragment : Fragment() {
         val evento3 = EventoItem(3, "Show de Rickypin", "San Pedro", LocalDate.now())
         val evento4 = EventoItem(4, "Show de Candy", "Alhaurin el Grande", LocalDate.now())
 
-        //INSERTANDO ITEMS EN LISTA
+        /**
+         * INSERTANDO ITEMS EN LISTA
+         */
         listaEventos.add(evento1)
         listaEventos.add(evento2)
         listaEventos.add(evento3)
         listaEventos.add(evento4)
 
-        //SINCRONIZACIÓN CON EL ADAPTER
+        /**
+         * SINCRONIZACIÓN CON EL ADAPTER
+         */
         val adapter = EventosAdapter(inflater.context, listaEventos)
 
-        //FUNCION ONCLICK QUE DIRIGE AL ACTIVITY EVENTO
+        /**
+         * FUNCION ONCLICK QUE DIRIGE AL ACTIVITY EVENTO
+         */
         adapter.setEventosListener(object : EventosAdapter.EventosListener {
             override fun onClick(position: Int) {
                 val intent = Intent(context, EventoActivity::class.java)

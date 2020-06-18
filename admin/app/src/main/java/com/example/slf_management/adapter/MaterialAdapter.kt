@@ -1,7 +1,6 @@
 package com.example.slf_management.adapter
 
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -62,7 +61,9 @@ class MaterialAdapter(var context: Context, var arrayList: ArrayList<MaterialIte
         fun onClick(position: Int)
     }
 
-    //FUNCION QUE DEVUELVE LA LISTA MATERIALES ACTUALIZADA
+    /**
+     * FUNCION QUE DEVUELVE LA LISTA MATERIALES ACTUALIZADA
+     */
     fun setListaMateriales(listaMateriales: ArrayList<MaterialItem>){
         arrayList = listaMateriales
         notifyDataSetChanged()

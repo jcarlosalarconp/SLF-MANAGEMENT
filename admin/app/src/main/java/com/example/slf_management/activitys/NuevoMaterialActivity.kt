@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import com.example.slf_management.R
 import com.example.slf_management.items.ListaMateriales
@@ -35,7 +36,7 @@ class NuevoMaterialActivity : AppCompatActivity() {
                     var materialItem = MaterialItem(listaMateriales.listaMaterial.size+1, nombreEditText.text.toString(), tipoEditText.text.toString(), true, 0, arrayListOf())
                     listaMateriales.listaMaterial.add(materialItem)
                     val map = hashMapOf<String, Any>("listaMaterial" to listaMateriales)
-                    db.collection("slf-management").document("material").set(map).addOnCompleteListener{task ->
+                    db.collection("slf-management").document("material").set(listaMateriales).addOnCompleteListener{task ->
                         if (task.isSuccessful){
                             Toast.makeText(this, "Material añadido con exito", Toast.LENGTH_SHORT).show()
                             finish()
@@ -51,9 +52,14 @@ class NuevoMaterialActivity : AppCompatActivity() {
 
         }
 
-
+        /**
+         * IMAGEN
+         */
+        val imagen = findViewById<ImageView>(R.id.imagenNuevoMaterial)
+        imagen.setOnClickListener{
+            Toast.makeText(this, "Hacer foto", Toast.LENGTH_SHORT).show()
+        }
 
     }
-
 
 }

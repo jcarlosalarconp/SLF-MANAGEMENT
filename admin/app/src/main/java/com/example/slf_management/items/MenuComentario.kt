@@ -1,7 +1,5 @@
 package com.example.slf_management.items
 
-import java.time.LocalDate
-
 data class MenuComentario (
     var menu : ArrayList<Section>
 )
