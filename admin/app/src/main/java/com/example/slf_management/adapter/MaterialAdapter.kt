@@ -1,7 +1,6 @@
 package com.example.slf_management.adapter
 
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.slf_management.R
 import com.example.slf_management.items.MaterialItem
 
-class MaterialAdapter(var context: Context, var arrayList: ArrayList<MaterialItem>) :
+class MaterialAdapter(var context: ArrayList<MaterialItem>, var arrayList: ArrayList<MaterialItem>) :
         RecyclerView.Adapter<MaterialAdapter.ItemHolder>() {
 
     private lateinit var mListener: MaterialListener

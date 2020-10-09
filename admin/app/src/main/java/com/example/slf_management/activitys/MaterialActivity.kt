@@ -36,8 +36,10 @@ class MaterialActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_material)
         intent.extras?.let {
-            val nombreMaterial = it.getString("nombreMaterial")
-            val imagenMaterial = it.getInt("imagenMaterial")
+            //val nombreMaterial = it.getString("nombreMaterial")
+            //val imagenMaterial = it.getInt("imagenMaterial")
+            val nombreMaterial = "nombreMaterial"
+            val imagenMaterial = R.drawable.material_icon
             nombreMaterialActivity.text = nombreMaterial
             imagenMaterialActivity.setImageResource(imagenMaterial)
         }
