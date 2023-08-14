@@ -1,5 +1,5 @@
 # SLF-MANAGEMENT
-Proyecto final del Grado Superior <b>Desarrollo de Aplicaciones Multiplataforma (DAM)</b> </br>
+Esta aplicación fue desarrollada para la entrega del TFG del del Grado Superior <b>Desarrollo de Aplicaciones Multiplataforma (DAM)</b> </br>
 
 # Descripción
 Esta app es un software de sistema de gestión de empresa dirigida a eventos, aunque es válida para cualquier tipo de empresa similar. </br>
@@ -15,4 +15,4 @@ Está aplicación debería ir acompañada de un programa para ordenador. Esta se
 
 # Documentación
 Para más información aquí te dejo la 
-<a href="[/pdfs/ProjMarr_slides.pdf](https://github.com/jcarlosalarconp/SLF-MANAGEMENT/blob/master/Documentaci%C3%B3n%20SLF-MANAGEMENT.pdf)https://github.com/jcarlosalarconp/SLF-MANAGEMENT/blob/master/Documentaci%C3%B3n%20SLF-MANAGEMENT.pdf">Documentación</a>
+<a href="/master/Documentaci%C3%B3n%20SLF-MANAGEMENT.pdf">Documentación</a>
