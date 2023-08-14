@@ -14,7 +14,7 @@ Está aplicación debería ir acompañada de un programa para ordenador. Esta se
 ![slf-management-evento-preview](https://github.com/jcarlosalarconp/SLF-MANAGEMENT/assets/48281276/3d8fef2c-08bd-4373-ab87-16a5e4a7b3ec)
 
 # Documentación
-<a href="/master/Documentaci%C3%B3n%20SLF-MANAGEMENT.pdf">Click aquí para ver la Documentación</a>
+<a href="/Documentaci%C3%B3n%20SLF-MANAGEMENT.pdf">Click aquí para ver la Documentación</a>
 
 <b>ÍNDICE</b>
 - Descripción
